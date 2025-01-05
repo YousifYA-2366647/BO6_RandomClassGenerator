@@ -1,0 +1,76 @@
+body {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), 10%, #000000), url('../Resources/mainBackground.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+#titleHeader {
+    text-align: center;
+    color: white;
+    font-size: 32px;
+}
+
+#description {
+    color: white;
+    font-size: 20px;
+}
+
+#buttonDiv {
+    text-align: center;
+    margin-top: 400px;
+}
+
+#generateButton {
+    text-align: center;
+    color: white;
+    background-color: #242424;
+}
+
+#randomWeapons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    text-justify: center;
+    color: white;
+    height: 100%;
+}
+
+.weaponName {
+    font-size: 42px;
+}
+
+#randomPrimary {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
+    text-justify: center;
+    color: white;
+    border-right: solid red 2px;
+    height: 100%;
+    width: 100%;
+}
+
+#randomSecondary {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
+    text-justify: center;
+    color: white;
+    border-left: solid red 2px;
+    height: 100%;
+    width: 100%;
+}
+
+.attachements {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    color: white;
+    width: 100%;
+}
+
+.attachement {
+    text-align: center;
+    color: white;
+    border: solid white 1px;
+}
