@@ -18,12 +18,14 @@ app.get("/generateClass", (request, response) => {
 app.get("/getWeapons", (request, response) => {
   let primaries = {};
   let secondaries = {};
+  let melees = {};
 
   let curPrimary = "";
   let curSecondary = "";
+  let curMelee = "";
 
   let primaryFiles = ["Weapon_data/AR_data.csv", "Weapon_data/SMG_data.csv", "Weapon_data/Shotgun_data.csv", "Weapon_data/LMG_data.csv", "Weapon_data/MarksmanRifle_data.csv", "Weapon_data/SniperRifle_data.csv"];
-  let secondaryFiles = ["Weapon_data/Pistol_data.csv", "Weapon_data/Launcher_data.csv", "Weapon_data/Melee_data.csv", ];
+  let secondaryFiles = ["Weapon_data/Pistol_data.csv", "Weapon_data/Launcher_data.csv"];
   primaryFiles.forEach((file) => {
     const fileContent = fs.readFileSync(file, 'utf-8');
     fileContent.split("\n").forEach(line => {
@@ -59,8 +61,25 @@ app.get("/getWeapons", (request, response) => {
     })
   })
 
+  const fileContent = fs.readFileSync("Weapon_data/Melee_data.csv", 'utf-8');
+    fileContent.split("\n").forEach(line => {
+      line = line.trim().replace(/\n/g, '')
+      let records = line.split(";");
+      if (records.length != 0) {
+        if (records[0] == "Name") {
+          melees[records[1]] = {};
+          curMelee = records[1];
+        }
+        else {
+          var randomAttachment = records.slice(1, records.length)[Math.floor(Math.random()*records.length)];
+          melees[curMelee][records[0]] = randomAttachment;
+        }
+      }
+    })
+
   let randomPrimary = Object.entries(primaries)[Math.floor(Math.random()*Object.keys(primaries).length)];
   let randomSecondary = Object.entries(secondaries)[Math.floor(Math.random()*Object.keys(secondaries).length)];
+  let randomMelee = Object.entries(melees)[Math.floor(Math.random()*Object.keys(melees).length)];
 
   let primaryKey = randomPrimary[0];
   let primaryJson = {};
@@ -70,8 +89,16 @@ app.get("/getWeapons", (request, response) => {
   let secondaryJson = {};
   secondaryJson[secondaryKey] = randomSecondary[1];
 
-  response.status(200).json({primary: primaryJson, secondary: secondaryJson});
-}) 
+  let meleeKey = randomMelee[0];
+  let meleeJson = {};
+  meleeJson[meleeKey] = randomMelee[1];
+
+  response.status(200).json({primary: primaryJson, secondary: secondaryJson, melee: meleeJson});
+});
+
+app.get("/disclaimer", (request, response) => {
+  response.render("pages/disclaimer");
+})
 
 
 

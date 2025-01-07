@@ -1,4 +1,4 @@
-window.onload = function () {
+function getRandomWeapons() {
     fetch("/getWeapons", {
         method: "GET"
     })
@@ -10,6 +10,7 @@ window.onload = function () {
     })
     .then(res => {
         let primaryAttachements = document.getElementById("primaryAttachments");
+        primaryAttachements.innerHTML = '';
         document.getElementById("primaryName").innerText = Object.keys(res.primary)[0];
         let chosenAttachements = Object.values(res.primary)[0];
         for (const key in chosenAttachements) {
@@ -21,6 +22,7 @@ window.onload = function () {
         }
 
         let secondaryAttachements = document.getElementById("secondaryAttachments");
+        secondaryAttachements.innerHTML = '';
         document.getElementById("secondaryName").innerText = Object.keys(res.secondary)[0];
         let chosenAttachementsSecondary = Object.values(res.secondary)[0];
         for (const key in chosenAttachementsSecondary) {
@@ -30,6 +32,11 @@ window.onload = function () {
 
             secondaryAttachements.appendChild(paragraph);
         }
+
+        document.getElementById("meleeName").innerText = Object.keys(res.melee)[0];
     })
 }
 
+window.onload = getRandomWeapons();
+
+document.getElementById("regenerateButton").addEventListener('click', getRandomWeapons);
