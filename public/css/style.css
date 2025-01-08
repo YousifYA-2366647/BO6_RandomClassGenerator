@@ -41,27 +41,21 @@ body {
 #randomPrimary {
     text-align: center;
     color: white;
-    border-right: solid red 2px;
-    width: 100%;
 }
 
 #randomSecondary {
     text-align: center;
     color: white;
-    border-left: solid red 2px;
-    border-right: solid red 2px;
-    width: 100%;
 }
 
 #randomMelee {
     text-align: center;
     color: white;
-    border-left: solid red 2px;
-    width: 100%;
 }
 
 .weaponImage {
     height: 200px;
+    max-width: 100%;
 }
 
 .attachements {

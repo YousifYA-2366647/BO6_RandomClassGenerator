@@ -11,7 +11,8 @@ function getPicturePath(weaponName, attachmentType, attachmentName) {
         fullPath += "/" + noSymbolsAttachmentName;
     }
     if (attachmentName == null && attachmentType == null) {
-        fullPath += "/" + weaponName;
+        noSymbolWeaponName = weaponName.replace(/\W/g, '');
+        fullPath += "/" + noSymbolWeaponName;
     }
     return fullPath + ".png";
 }
