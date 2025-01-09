@@ -23,6 +23,24 @@ function getPerkImagePath(perkName) {
     return fullPath + noSymbolsPerkName + ".png";
 }
 
+function getScorestreakImagePath(scorestreakName) {
+    let fullPath = "Resources/Scorestreaks/";
+    let noSymbolsScorestreakName = scorestreakName.replace(/\W/g, '');
+    return fullPath + noSymbolsScorestreakName + ".png";
+}
+
+function getWildcardImagePath(wildcardName) {
+    let fullPath = "Resources/Wildcards/";
+    let noSymbolsWildcardName = wildcardName.replace(/\W/g, '');
+    return fullPath + noSymbolsWildcardName + ".png";
+}
+
+function getEquipmentImagePath(equipmentName) {
+    let fullPath = "Resources/Equipment/";
+    let noSymbolsEquipmentName = equipmentName.replace(/\W/g, '');
+    return fullPath + noSymbolsEquipmentName + ".png";
+}
+
 function setupPrimary(jsonObject) {
     let primaryAttachements = document.getElementById("primaryAttachments");
     primaryAttachements.innerHTML = '';
@@ -78,27 +96,57 @@ function setupEquipment(lethalJsonObject, tacticalJsonObject, fieldJsonObject) {
     fieldDiv.innerHTML = '';
 
     for (const key in lethalJsonObject) {
+        let grenadeDiv = document.createElement('div');
+        grenadeDiv.className = 'grenadeDiv';
+
+        let image = document.createElement('img');
+        image.className = 'grenadeImage';
+        image.src = getEquipmentImagePath(lethalJsonObject[key]);
+
         let paragraph = document.createElement('p');
         paragraph.className = "equipment";
         paragraph.innerText = lethalJsonObject[key];
 
-        lethalDiv.appendChild(paragraph);
+        grenadeDiv.appendChild(image)
+        grenadeDiv.appendChild(paragraph);
+
+        lethalDiv.append(grenadeDiv);
     }
 
     for (const key in tacticalJsonObject) {
+        let grenadeDiv = document.createElement('div');
+        grenadeDiv.className = 'grenadeDiv';
+
+        let image = document.createElement('img');
+        image.className = 'grenadeImage';
+        image.src = getEquipmentImagePath(tacticalJsonObject[key]);
+
         let paragraph = document.createElement('p');
         paragraph.className = "equipment";
         paragraph.innerText = tacticalJsonObject[key];
 
-        tacticalDiv.appendChild(paragraph);
+        grenadeDiv.appendChild(image)
+        grenadeDiv.appendChild(paragraph);
+
+        tacticalDiv.append(grenadeDiv);
     }
 
     for (const key in fieldJsonObject) {
+        let newFieldDiv = document.createElement('div');
+        newFieldDiv.className = 'fieldDiv';
+
+        let image = document.createElement('img');
+        image.className = 'fieldImage';
+        image.src = getEquipmentImagePath(fieldJsonObject[key]);
+
         let paragraph = document.createElement('p');
         paragraph.className = "equipment";
         paragraph.innerText = fieldJsonObject[key];
 
-        fieldDiv.appendChild(paragraph);
+        newFieldDiv.appendChild(image)
+        newFieldDiv.appendChild(paragraph);
+
+        fieldDiv.append(newFieldDiv);
     }
 }
 
@@ -126,8 +174,19 @@ function setupPerks(perkJsonObject) {
 }
 
 function setupWildcard(wildcard) {
-    let wildcardText = document.getElementById("randomWildcardText");
+    let randomWildcard = document.getElementById("randomWildcard");
+    randomWildcard.innerHTML = '';
+
+    let wildcardImage = document.createElement('img');
+    wildcardImage.className = "wildcardImage";
+    wildcardImage.src = getWildcardImagePath(wildcard);
+
+    let wildcardText = document.createElement('p');
+    wildcardText.className = "wildcardText";
     wildcardText.innerText = wildcard;
+
+    randomWildcard.appendChild(wildcardImage);
+    randomWildcard.appendChild(wildcardText);
 }
 
 function setupScorestreaks(scorestreakJsonObject) {
@@ -135,11 +194,21 @@ function setupScorestreaks(scorestreakJsonObject) {
     scorestreakDiv.innerHTML = '';
 
     for (const key in scorestreakJsonObject) {
+        let newScorestreakDiv = document.createElement('div');
+        newScorestreakDiv.className = 'scorestreakDiv';
+
+        let image = document.createElement('img');
+        image.className = "scorestreakImage";
+        image.src = getScorestreakImagePath(scorestreakJsonObject[key]);
+
         let paragraph = document.createElement('p');
-        paragraph.className = "scorestreak";
+        paragraph.className = 'scorestreak';
         paragraph.innerText = scorestreakJsonObject[key];
 
-        scorestreakDiv.appendChild(paragraph);
+        newScorestreakDiv.appendChild(image);
+        newScorestreakDiv.appendChild(paragraph);
+
+        scorestreakDiv.appendChild(newScorestreakDiv);
     }
 }
 

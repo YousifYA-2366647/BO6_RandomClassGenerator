@@ -19,7 +19,8 @@ function getWeaponsFromCSV(fileName) {
         curWeapon = records[1];
       }
       else {
-        var randomAttachment = records.slice(1, records.length)[Math.floor(Math.random()*records.length)];
+        var attachments = records.slice(1, records.length);
+        var randomAttachment = attachments[Math.floor(Math.random()*(records.length-1))];
         weapons[curWeapon][records[0]] = randomAttachment;
       }
     }
@@ -75,24 +76,24 @@ function getRandomElements(arrayObject, amount) {
 
 function getRandomAttachments(weaponJson, amount) {
   let weaponName = Object.keys(weaponJson)[0];
-  let attachments = Object.values(weaponJson)[0];
-  let attachmentKeys = Object.keys(attachments);
+  let attachments = weaponJson[weaponName];
+  
+  let nonEmptyKeys = Object.keys(attachments).filter(key => attachments[key] !== "");
 
-  let iterateLength = attachmentKeys.length - amount;
+  let attachmentsToRemove = Math.max(0, nonEmptyKeys.length - amount);
 
-  for (const key in attachments) {
-    if (attachments[key] == "") {
-      iterateLength--;
-    }
-  }
+  for (let i = 0; i < attachmentsToRemove; i++) {
+    let randomIndex = Math.floor(Math.random() * nonEmptyKeys.length);
+    let randomKey = nonEmptyKeys[randomIndex];
 
-  for (let i = 0; i < iterateLength; i++) {
-    let randomAttachmentKey = attachmentKeys[Math.floor(Math.random()*attachmentKeys.length)];
-    weaponJson[weaponName][randomAttachmentKey] = "";
+    attachments[randomKey] = "";
+
+    nonEmptyKeys.splice(randomIndex, 1);
   }
 
   return weaponJson;
 }
+
 
 function addSpecialPerk(perks, enforcer, recon, specialist) {
   let amountOfE = 0;
@@ -169,6 +170,8 @@ app.get("/getWeapons", (request, response) => {
   let randomSecondary = getRandomItemsFromJSON(secondaries);
   let randomMelee = getRandomItemsFromJSON(melees);
 
+  console.log(JSON.stringify(randomPrimary));
+
   let randomWildcard = getRandomWildcard(wildcards);
 
   let amountOfLethals = (randomWildcard == "Danger Close") ? 2: 1;
@@ -196,6 +199,7 @@ app.get("/getWeapons", (request, response) => {
 
   let amountOfStreaks = (randomWildcard == "High Roller") ? 4: 3;
   let randomScorestreaks = getRandomElements([...scorestreaks], amountOfStreaks);
+  randomScorestreaks.sort((a, b) => scorestreaks.indexOf(a) - scorestreaks.indexOf(b));
 
   let amountOfFieldUpgrades = (randomWildcard == "Prepper") ? 2: 1;
   let randomFieldUpgrades = getRandomElements([...fieldUpgrades], amountOfFieldUpgrades);
@@ -208,6 +212,8 @@ app.get("/getWeapons", (request, response) => {
   }
 
   randomSecondary = getRandomAttachments({...randomSecondary}, 5);
+
+  console.log(JSON.stringify(randomPrimary));
 
   response.status(200).json({primary: randomPrimary, secondary: randomSecondary, melee: randomMelee, lethal: randomLethal, tactical: randomTactical, fieldUpgrade: randomFieldUpgrades, perks: randomPerks, wildcard: randomWildcard, scorestreaks: randomScorestreaks});
 });
