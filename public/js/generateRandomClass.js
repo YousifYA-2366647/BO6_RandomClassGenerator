@@ -1,5 +1,5 @@
-function getPicturePath(weaponName, attachmentType, attachmentName) {
-    fullPath = "Resources/" + weaponName; 
+function getWeaponImagePath(weaponName, attachmentType, attachmentName) {
+    fullPath = "Resources/Weapons/" + weaponName; 
     if (attachmentType != null) {
         fullPath += "/" + attachmentType 
     }
@@ -17,17 +17,23 @@ function getPicturePath(weaponName, attachmentType, attachmentName) {
     return fullPath + ".png";
 }
 
+function getPerkImagePath(perkName) {
+    let fullPath = "Resources/Perks/";
+    let noSymbolsPerkName = perkName.replace(/\W/g, '');
+    return fullPath + noSymbolsPerkName + ".png";
+}
+
 function setupPrimary(jsonObject) {
     let primaryAttachements = document.getElementById("primaryAttachments");
     primaryAttachements.innerHTML = '';
     document.getElementById("primaryName").innerText = Object.keys(jsonObject)[0];
-    document.getElementById("primaryImage").src = getPicturePath(Object.keys(jsonObject)[0], null, null);
+    document.getElementById("primaryImage").src = getWeaponImagePath(Object.keys(jsonObject)[0], null, null);
 
     let chosenAttachements = Object.values(jsonObject)[0];
     for (const key in chosenAttachements) {
         let image = document.createElement('img');
         image.className = "attachement";
-        ImagePath = getPicturePath(Object.keys(jsonObject)[0], key, chosenAttachements[key]);
+        ImagePath = getWeaponImagePath(Object.keys(jsonObject)[0], key, chosenAttachements[key]);
         if (ImagePath == -1) {
             let division = document.createElement('div');
             division.className = "attachement";
@@ -44,13 +50,13 @@ function setupSecondary(jsonObject) {
     let secondaryAttachements = document.getElementById("secondaryAttachments");
     secondaryAttachements.innerHTML = '';
     document.getElementById("secondaryName").innerText = Object.keys(jsonObject)[0];
-    document.getElementById("secondaryImage").src = getPicturePath(Object.keys(jsonObject)[0], null, null);
+    document.getElementById("secondaryImage").src = getWeaponImagePath(Object.keys(jsonObject)[0], null, null);
 
     let chosenAttachementsSecondary = Object.values(jsonObject)[0];
     for (const key in chosenAttachementsSecondary) {
         let image = document.createElement('img');
         image.className = "attachement";
-        ImagePath = getPicturePath(Object.keys(jsonObject)[0], key, chosenAttachementsSecondary[key]);
+        ImagePath = getWeaponImagePath(Object.keys(jsonObject)[0], key, chosenAttachementsSecondary[key]);
         if (ImagePath == -1) {
             let division = document.createElement('div');
             division.className = "attachement";
@@ -101,11 +107,21 @@ function setupPerks(perkJsonObject) {
     perkDiv.innerHTML = '';
 
     for (const key in perkJsonObject) {
+        let newPerkDiv = document.createElement('div');
+        newPerkDiv.className = 'perkDiv';
+
+        let image = document.createElement('img');
+        image.className = "perkImage";
+        image.src = getPerkImagePath(perkJsonObject[key]);
+
         let paragraph = document.createElement('p');
-        paragraph.className = "perk";
+        paragraph.className = 'perk';
         paragraph.innerText = perkJsonObject[key];
 
-        perkDiv.appendChild(paragraph);
+        newPerkDiv.appendChild(image);
+        newPerkDiv.appendChild(paragraph);
+
+        perkDiv.appendChild(newPerkDiv);
     }
 }
 
@@ -145,7 +161,7 @@ function getRandomWeapons() {
         setupSecondary(res.secondary);
 
         document.getElementById("meleeName").innerText = Object.keys(res.melee)[0];
-        document.getElementById("meleeImage").src = getPicturePath(Object.keys(res.melee)[0], null, null);
+        document.getElementById("meleeImage").src = getWeaponImagePath(Object.keys(res.melee)[0], null, null);
 
         setupEquipment(res.lethal, res.tactical, res.fieldUpgrade);
 

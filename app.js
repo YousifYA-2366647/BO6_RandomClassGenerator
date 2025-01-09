@@ -118,7 +118,7 @@ function addSpecialPerk(perks, enforcer, recon, specialist) {
     perks.push("Recon");
   }
   else if (amountOfS >= 3) {
-    perks.push("Specialist");
+    perks.push("Strategist");
   }
 
   return perks;
@@ -138,14 +138,21 @@ app.get("/getWeapons", (request, response) => {
   let primaries = {};
   let secondaries = {};
   let melees = {};
+
   let lethals = getEquipmentFromCSV("Weapon_data/Lethal_data.csv");
   let tacticals = getEquipmentFromCSV("Weapon_data/Tactical_data.csv");
+  let fieldUpgrades = getEquipmentFromCSV("Weapon_data/FieldUpgrade_data.csv");
+
   let enforcerPerks = getEquipmentFromCSV("Weapon_data/EnforcerPerk_data.csv");
   let reconPerks = getEquipmentFromCSV("Weapon_data/ReconPerk_data.csv");
-  let specialistPerks = getEquipmentFromCSV("Weapon_data/SpecialistPerk_data.csv");
+  let strategistPerks = getEquipmentFromCSV("Weapon_data/SpecialistPerk_data.csv");
+  let firstPerk = getEquipmentFromCSV("Weapon_data/FirstPerk_data.csv");
+  let secondPerk = getEquipmentFromCSV("Weapon_data/SecondPerk_data.csv");
+  let thirdPerk = getEquipmentFromCSV("Weapon_data/ThirdPerk_data.csv");
+
   let wildcards = getEquipmentFromCSV("Weapon_data/Wildcard_data.csv");
+
   let scorestreaks = getEquipmentFromCSV("Weapon_data/Scorestreak_data.csv");
-  let fieldUpgrades = getEquipmentFromCSV("Weapon_data/FieldUpgrade_data.csv");
 
   let primaryFiles = ["Weapon_data/AR_data.csv", "Weapon_data/SMG_data.csv", "Weapon_data/Shotgun_data.csv", "Weapon_data/LMG_data.csv", "Weapon_data/MarksmanRifle_data.csv", "Weapon_data/SniperRifle_data.csv"];
   let secondaryFiles = ["Weapon_data/Pistol_data.csv", "Weapon_data/Launcher_data.csv"];
@@ -177,8 +184,15 @@ app.get("/getWeapons", (request, response) => {
   }
 
   let amountOfPerks = (randomWildcard == "Perk Greed") ? 4: 3;
-  let randomPerks = getRandomElements([...enforcerPerks, ...reconPerks, ...specialistPerks], amountOfPerks);
-  randomPerks = addSpecialPerk(randomPerks, enforcerPerks, reconPerks, specialistPerks);
+  let randomPerks = [...getRandomElements(firstPerk, 1), ...getRandomElements(secondPerk, 1), ...getRandomElements(thirdPerk, 1)];
+  if (amountOfPerks == 4) {
+    let leftPerks = [...firstPerk, ...secondPerk, ...thirdPerk];
+    for (const perk in randomPerks) {
+      leftPerks.splice(leftPerks.indexOf(randomPerks[perk]), 1);
+    }
+    randomPerks = [...randomPerks, ...getRandomElements([...leftPerks], 1)];
+  }
+  randomPerks = addSpecialPerk(randomPerks, enforcerPerks, reconPerks, strategistPerks);
 
   let amountOfStreaks = (randomWildcard == "High Roller") ? 4: 3;
   let randomScorestreaks = getRandomElements([...scorestreaks], amountOfStreaks);
