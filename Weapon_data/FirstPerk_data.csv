@@ -1,13 +1,20 @@
-Name;Assassin
+Name;Gung-Ho
+Level;1
+
+Name;Dexterity
+Level;20
 
 Name;Scavenger
-
-Name;Bruiser
-
-Name;Ninja
+Level;26
 
 Name;Ghost
+Level;17
+
+Name;Ninja
+Level;35
 
 Name;Flak Jacket
+Level;8
 
 Name;Tac Mask
+Level;44

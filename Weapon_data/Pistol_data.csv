@@ -1,4 +1,5 @@
 Name;9mm PM
+Level;1
 Optic;Remuda Mini Reflex;Otero Micro Dot;Kepler Microflex;Merlin Mini;Accu-Spot Reflex;Kepler Pistol Scope;
 Muzzle;Suppressor;Compensator;Muzzle Brake;Ported Compensator;
 Barrel;Gain-Twist Barrel;Long Barrel;Reinforced Barrel;Short Barrel;CHF Barrel;
@@ -9,6 +10,7 @@ Laser;Steady Aim Laser;Fast Motion Laser;Tactical Laser;Strelok Laser;Target Las
 Fire Mod;Rapid Fire;9x18mm Makarov Overpressured;Recoil Springs;9x18mm Makarov FMJ;
 
 Name;Grekhova
+Level;13
 Optic;Remuda Mini Reflex;Otero Micro Dot;Kepler Microflex;Merlin Mini;Accu-Spot Reflex;Kepler Pistol Scope;
 Muzzle;Suppressor;Compensator;Muzzle Brake;Ported Compensator;
 Barrel;Gain-Twist Barrel;Long Barrel;Reinforced Barrel;Short Barrel;CHF Barrel;
@@ -19,6 +21,7 @@ Laser;Steady Aim Laser;Fast Motion Laser;Tactical Laser;Strelok Laser;Target Las
 Fire Mod;Rapid Fire;9x18mm Makarov Overpressured;Recoil Springs;9x18mm Makarov FMJ;
 
 Name;GS45
+Level;28
 Optic;Remuda Mini Reflex;Otero Micro Dot;Kepler Microflex;Merlin Mini;Accu-Spot Reflex;Kepler Pistol Scope;
 Muzzle;Suppressor;Compensator;Muzzle Brake;Ported Compensator;
 Barrel;Gain-Twist Barrel;Long Barrel;Reinforced Barrel;Short Barrel;CHF Barrel;
@@ -29,6 +32,7 @@ Laser;Steady Aim Laser;Fast Motion Laser;Tactical Laser;Strelok Laser;Target Las
 Fire Mod;Rapid Fire;.45 ACP Overpressured;Recoil Springs;.45 ACP FMJ;
 
 Name;Stryder .22
+Level;40
 Optic;Remuda Mini Reflex;Otero Micro Dot;Kepler Microflex;Merlin Mini;Accu-Spot Reflex;Kepler Pistol Scope;
 Muzzle;Suppressor;Compensator;Muzzle Brake;Ported Compensator;
 Barrel;Gain-Twist Barrel;Long Barrel;Reinforced Barrel;Short Barrel;CHF Barrel;
@@ -39,6 +43,7 @@ Laser;Steady Aim Laser;Fast Motion Laser;Tactical Laser;Strelok Laser;Target Las
 Fire Mod;Rapid Fire;.22 WMR Overpressured;Recoil Springs;.22 WMR FMJ;
 
 Name;Sirin 9mm
+Level;1
 Optic;Iron Sight;Carry Handle Sight;
 Muzzle;Suppressor;
 Barrel;Long Barrel;

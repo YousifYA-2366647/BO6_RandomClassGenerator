@@ -7,17 +7,15 @@
         <div id="randomWeapons">
             <div id="randomPrimary">
                 <p class="weaponName" id="primaryName"></p>
-                <img class="weaponImage" id="primaryImage">
-                <div class="attachements" id="primaryAttachments">
-                    
-                </div>
+                <a href="#" id="primaryAttachmentButton">
+                    <img class="weaponImage" id="primaryImage">
+                </a>
             </div>
             <div id="randomSecondary">
                 <p class="weaponName" id="secondaryName"></p>
-                <img class="weaponImage" id="secondaryImage">
-                <div class="attachements" id="secondaryAttachments">
-    
-                </div>
+                <a href="#" id="secondaryAttachmentButton">
+                    <img class="weaponImage" id="secondaryImage">
+                </a>
             </div>
             <div id="randomMelee">
                 <p class="weaponName" id="meleeName"></p>
@@ -47,6 +45,26 @@
     
         <div id="randomScorestreaks">
     
+        </div>
+    </div>
+
+    <div class="attachmentModals" id="primaryAttachmentModal">
+        <button class="closeButton" id="closeButton">close</button>
+        <div class="modalContent" id="primaryAttachmentModalContent">
+            <p style="color:white;font-size:20px;text-align: center;;">Attachments:</p>
+            <div class="attachements" id="primaryAttachments">
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="attachmentModals" id="secondaryAttachmentModal">
+        <button class="closeButton" id="secondCloseButton">close</button>
+        <div class="modalContent" id="secondaryAttachmentModalContent">
+            <p style="color:white;font-size:20px;text-align: center;">Attachments:</p>
+            <div class="attachements" id="secondaryAttachments">
+                
+            </div>
         </div>
     </div>
 

@@ -5,6 +5,20 @@ const express = require('express');
 const app = express();
 const APP_PORT = 8080;
 
+function getCookies(req, cookieName) {
+  const cookies = req.headers.cookie;
+  if (!cookies) return "";
+
+  const cookieArray = cookies.split("; ");
+  for (let cookie of cookieArray) {
+    const [key, value] = cookie.split("=");
+    if (key === cookieName) {
+      return decodeURIComponent(value);
+    }
+  }
+  return "";
+}
+
 function getWeaponsFromCSV(fileName) {
   weapons = {};
   curWeapon = "";
@@ -18,6 +32,9 @@ function getWeaponsFromCSV(fileName) {
         weapons[records[1]] = {};
         curWeapon = records[1];
       }
+      else if (records[0] == "Level") {
+        weapons[curWeapon][records[0]] = parseInt(records[1]);
+      }
       else {
         var attachments = records.slice(1, records.length);
         var randomAttachment = attachments[Math.floor(Math.random()*(records.length-1))];
@@ -30,7 +47,8 @@ function getWeaponsFromCSV(fileName) {
 }
 
 function getEquipmentFromCSV(fileName) {
-  equipment = [];
+  equipment = {};
+  curEquipment = "";
 
   const fileContent = fs.readFileSync(fileName, 'utf-8');
   fileContent.split("\n").forEach(line => {
@@ -38,7 +56,11 @@ function getEquipmentFromCSV(fileName) {
     let records = line.split(";");
     if (records.length != 0) {
       if (records[0] == "Name") {
-        equipment.push(records[1]);
+        equipment[records[1]] = {};
+        curEquipment = records[1];
+      }
+      else if (records[0] == "Level") {
+        equipment[curEquipment][records[0]] = parseInt(records[1]);
       }
     }
   })
@@ -46,7 +68,24 @@ function getEquipmentFromCSV(fileName) {
   return equipment;
 }
 
-function getRandomItemsFromJSON(JsonObject) {
+function filterItems(JsonObject, curLevel) {
+  for (const key in JsonObject) {
+    if (JsonObject[key]['Level'] > curLevel) {
+      delete JsonObject[key];
+    }
+    else {
+      delete JsonObject[key]['Level'];
+    }
+  }
+}
+
+function getRandomItemsFromJSON(JsonObject, curLevel) {
+  if (Object.keys(JsonObject).length == 0) {
+    return {};
+  }
+
+  filterItems(JsonObject, curLevel);
+
   let randomEntry = Object.entries(JsonObject)[Math.floor(Math.random()*Object.keys(JsonObject).length)];
 
   let randomKey = randomEntry[0];
@@ -54,24 +93,6 @@ function getRandomItemsFromJSON(JsonObject) {
   randomJson[randomKey] = randomEntry[1];
 
   return randomJson;
-}
-
-function getRandomWildcard(arrayObject) {
-  let randomEntry = arrayObject[Math.floor(Math.random()*arrayObject.length)];
-
-  return randomEntry;
-}
-
-function getRandomElements(arrayObject, amount) {
-  let chosenItems = [];
-
-  for (let i = 0; i < amount; i++) {
-    let randomObject = arrayObject[Math.floor(Math.random()*arrayObject.length)];
-    chosenItems.push(randomObject);
-    arrayObject.splice(arrayObject.indexOf(randomObject), 1);
-  }
-
-  return chosenItems;
 }
 
 function getRandomAttachments(weaponJson, amount) {
@@ -101,13 +122,13 @@ function addSpecialPerk(perks, enforcer, recon, specialist) {
   let amountOfS = 0;
 
   for (const perk in perks) {
-    if (enforcer.indexOf(perks[perk]) != -1) {
+    if (Object.keys(enforcer).includes(perks[perk])) {
       amountOfE++;
     }
-    else if (recon.indexOf(perks[perk]) != -1) {
+    else if (Object.keys(recon).includes(perks[perk])) {
       amountOfR++;
     }
-    else if (specialist.indexOf(perks[perk]) != -1) {
+    else if (Object.keys(specialist).includes(perks[perk])) {
       amountOfS++;
     }
   }
@@ -166,54 +187,69 @@ app.get("/getWeapons", (request, response) => {
 
   Object.assign(melees, getWeaponsFromCSV("Weapon_data/Melee_data.csv"));
 
-  let randomPrimary = getRandomItemsFromJSON(primaries);
-  let randomSecondary = getRandomItemsFromJSON(secondaries);
-  let randomMelee = getRandomItemsFromJSON(melees);
+  let curLevel = getCookies(request, 'curLevel');
+  if (curLevel == "") {
+    curLevel = 1;
+  }
 
-  console.log(JSON.stringify(randomPrimary));
+  let randomPrimary = getRandomItemsFromJSON({...primaries}, curLevel);
+  let randomSecondary = getRandomItemsFromJSON({...secondaries}, curLevel);
+  let randomMelee = getRandomItemsFromJSON({...melees}, curLevel);
 
-  let randomWildcard = getRandomWildcard(wildcards);
+  let randomWildcard = Object.keys(getRandomItemsFromJSON({...wildcards}, curLevel))[0];
 
   let amountOfLethals = (randomWildcard == "Danger Close") ? 2: 1;
-  let randomLethal = getRandomElements([...lethals], 1);
+  let randomLethal = getRandomItemsFromJSON({...lethals}, curLevel);
+  randomLethal = [Object.keys(randomLethal)[0]];
   if (amountOfLethals == 2) {
     randomLethal = [...randomLethal, ...randomLethal];
   }
 
   let amountOfTacticals = (randomWildcard == "Tactical Expert") ? 3: 1;
-  let randomTactical = getRandomElements([...tacticals], 1);
+  let randomTactical = getRandomItemsFromJSON({...tacticals}, curLevel);
+  randomTactical = [Object.keys(randomTactical)[0]];
   if (amountOfTacticals == 3) {
     randomTactical = [...randomTactical, ...randomTactical, ...randomTactical];
   }
 
   let amountOfPerks = (randomWildcard == "Perk Greed") ? 4: 3;
-  let randomPerks = [...getRandomElements(firstPerk, 1), ...getRandomElements(secondPerk, 1), ...getRandomElements(thirdPerk, 1)];
+  let randomPerks = [Object.keys(getRandomItemsFromJSON({...firstPerk}, curLevel))[0], Object.keys(getRandomItemsFromJSON({...secondPerk}, curLevel))[0], Object.keys(getRandomItemsFromJSON({...thirdPerk}, curLevel))[0]];
   if (amountOfPerks == 4) {
-    let leftPerks = [...firstPerk, ...secondPerk, ...thirdPerk];
+    let leftPerks = {...firstPerk, ...secondPerk, ...thirdPerk};
     for (const perk in randomPerks) {
-      leftPerks.splice(leftPerks.indexOf(randomPerks[perk]), 1);
+      delete leftPerks[randomPerks[perk]];
     }
-    randomPerks = [...randomPerks, ...getRandomElements([...leftPerks], 1)];
+    randomPerks = [...randomPerks, Object.keys(getRandomItemsFromJSON({...leftPerks}, curLevel))[0]];
   }
   randomPerks = addSpecialPerk(randomPerks, enforcerPerks, reconPerks, strategistPerks);
 
   let amountOfStreaks = (randomWildcard == "High Roller") ? 4: 3;
-  let randomScorestreaks = getRandomElements([...scorestreaks], amountOfStreaks);
-  randomScorestreaks.sort((a, b) => scorestreaks.indexOf(a) - scorestreaks.indexOf(b));
+  let randomScorestreaks = [];
+  for (let i = 0; i < amountOfStreaks; i++) {
+    let newScorestreaks = {...scorestreaks};
+    for (const key in randomScorestreaks) {
+      if (Object.keys(newScorestreaks).includes(randomScorestreaks[key])) {
+        delete newScorestreaks[randomScorestreaks[key]];
+      }
+    }
+    randomScorestreaks = [...randomScorestreaks, Object.keys(getRandomItemsFromJSON({...newScorestreaks}, curLevel))[0]];
+  }
+  randomScorestreaks.sort((a, b) => Object.keys(scorestreaks).indexOf(a) - Object.keys(scorestreaks).indexOf(b));
 
   let amountOfFieldUpgrades = (randomWildcard == "Prepper") ? 2: 1;
-  let randomFieldUpgrades = getRandomElements([...fieldUpgrades], amountOfFieldUpgrades);
+  let randomFieldUpgrades = [Object.keys(getRandomItemsFromJSON({...fieldUpgrades}, curLevel))[0]];
+  if (amountOfFieldUpgrades == 2) {
+    randomFieldUpgrades = [...randomFieldUpgrades, Object.keys(getRandomItemsFromJSON({...fieldUpgrades}, curLevel))[0]];
+  }
 
   let amountOfAttachments = (randomWildcard == "Gunfighter") ? 8: 5;
   randomPrimary = getRandomAttachments({...randomPrimary}, amountOfAttachments);
 
   if (randomWildcard == "Overkill") {
-    randomSecondary = getRandomItemsFromJSON(primaries);
+    randomSecondary = getRandomItemsFromJSON({...primaries}, curLevel);
   }
 
   randomSecondary = getRandomAttachments({...randomSecondary}, 5);
-
-  console.log(JSON.stringify(randomPrimary));
 
   response.status(200).json({primary: randomPrimary, secondary: randomSecondary, melee: randomMelee, lethal: randomLethal, tactical: randomTactical, fieldUpgrade: randomFieldUpgrades, perks: randomPerks, wildcard: randomWildcard, scorestreaks: randomScorestreaks});
 });

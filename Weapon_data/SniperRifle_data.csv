@@ -1,4 +1,5 @@
 Name;LW3A1 Frostline
+Level;1
 Optic;Iron Sight;Kepler Microflex;PrismaTech Reflex;Redwell Reflex;K&S Red Dot;Kepler Red Dot;OM3 '92 Holor;Accu-Spot Ultra Holo;Willis 3x;PrismaTech 4x;Dobrych 4x;K&S Thermal Holo;Pinpoint Hybrid;PrismaPoint Hybrid;R&K Multizoom;Remuda Range Finder;Blandwell 7x Scope;Remuda Dual Zoom;VMF Variable Scope;Redwell Custom Zoom;Otero Thermal 2x;Thermal 6x;
 Muzzle;Suppressor;Compensator;Muzzle Brake;Ported Compensator;
 Barrel;Gain-Twist Barrel;Long Barrel;Reinforced Barrel;Short Barrel;CHF Barrel;
@@ -10,6 +11,7 @@ Laser;Steady Aim Laser;Fast Motion Laser;Tactical Laser;Strelok Laser;Target Las
 Fire Mod;Rapid Fire;7.62 NATO Overpressured;7.62 NATO FMJ;
 
 Name;SVD
+Level;25
 Optic;Iron Sight;Kepler Microflex;PrismaTech Reflex;Redwell Reflex;K&S Red Dot;Kepler Red Dot;OM3 '92 Holor;Accu-Spot Ultra Holo;Willis 3x;PrismaTech 4x;Dobrych 4x;K&S Thermal Holo;Pinpoint Hybrid;PrismaPoint Hybrid;R&K Multizoom;Remuda Range Finder;Blandwell 7x Scope;Remuda Dual Zoom;VMF Variable Scope;Redwell Custom Zoom;Otero Thermal 2x;Thermal 6x;
 Muzzle;Suppressor;Compensator;Muzzle Brake;Ported Compensator;
 Barrel;Gain-Twist Barrel;Long Barrel;Reinforced Barrel;Short Barrel;CHF Barrel;
@@ -21,6 +23,7 @@ Laser;Steady Aim Laser;Fast Motion Laser;Tactical Laser;Strelok Laser;Target Las
 Fire Mod;Rapid Fire;7.62x54mmR Overpressured;Recoil Springs;7.62x54mmR FMJ;
 
 Name;LR 7.62
+Level;49
 Optic;Iron Sight;Kepler Microflex;PrismaTech Reflex;Redwell Reflex;K&S Red Dot;Kepler Red Dot;OM3 '92 Holor;Accu-Spot Ultra Holo;Willis 3x;PrismaTech 4x;Dobrych 4x;K&S Thermal Holo;Pinpoint Hybrid;PrismaPoint Hybrid;R&K Multizoom;Remuda Range Finder;Blandwell 7x Scope;Remuda Dual Zoom;VMF Variable Scope;Redwell Custom Zoom;Otero Thermal 2x;Thermal 6x;
 Muzzle;Suppressor;Compensator;Muzzle Brake;Ported Compensator;
 Barrel;Gain-Twist Barrel;Long Barrel;Reinforced Barrel;Short Barrel;CHF Barrel;
@@ -32,6 +35,7 @@ Laser;Steady Aim Laser;Fast Motion Laser;Tactical Laser;Strelok Laser;Target Las
 Fire Mod;Rapid Fire;7.62 NATO Overpressured;7.62 NATO FMJ;
 
 Name;AMR Mod4
+Level;1
 Optic;Iron Sight;Kepler Microflex;PrismaTech Reflex;Redwell Reflex;K&S Red Dot;Kepler Red Dot;OM3 '92 Holor;Accu-Spot Ultra Holo;Willis 3x;PrismaTech 4x;Dobrych 4x;K&S Thermal Holo;Pinpoint Hybrid;PrismaPoint Hybrid;R&K Multizoom;Remuda Range Finder;Blandwell 7x Scope;Remuda Dual Zoom;VMF Variable Scope;Redwell Custom Zoom;Otero Thermal 2x;Thermal 6x
 Muzzle;Suppressor;Compensator;Muzzle Brake;Ported Compensator;
 Barrel;Gain-Twist Barrel;Long Barrel;Reinforced Barrel;Short Barrel;CHF Barrel;

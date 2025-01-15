@@ -49,6 +49,9 @@ function setupPrimary(jsonObject) {
 
     let chosenAttachements = Object.values(jsonObject)[0];
     for (const key in chosenAttachements) {
+        if (!chosenAttachements[key]) {
+            continue;
+        }
         let image = document.createElement('img');
         image.className = "attachement";
         ImagePath = getWeaponImagePath(Object.keys(jsonObject)[0], key, chosenAttachements[key]);
@@ -62,6 +65,10 @@ function setupPrimary(jsonObject) {
 
         primaryAttachements.appendChild(image);
     }
+    if (chosenAttachements.length > 5) {
+        document.getElementById("primaryAttachmentModalContent").style.marginTop = (13 - chosenAttachements.length) + "%"
+        document.getElementById("primaryAttachmentModalContent").style.height = (chosenAttachements.length * 11) + "%";
+    }
 }
 
 function setupSecondary(jsonObject) {
@@ -72,6 +79,9 @@ function setupSecondary(jsonObject) {
 
     let chosenAttachementsSecondary = Object.values(jsonObject)[0];
     for (const key in chosenAttachementsSecondary) {
+        if (!chosenAttachementsSecondary[key]) {
+            continue;
+        }
         let image = document.createElement('img');
         image.className = "attachement";
         ImagePath = getWeaponImagePath(Object.keys(jsonObject)[0], key, chosenAttachementsSecondary[key]);
@@ -245,3 +255,53 @@ function getRandomWeapons() {
 window.onload = getRandomWeapons();
 
 document.getElementById("regenerateButton").addEventListener('click', getRandomWeapons);
+
+var modal = document.getElementById("primaryAttachmentModal");
+var button = document.getElementById("primaryAttachmentButton");
+var closeButton = document.getElementById("closeButton");
+
+button.onclick = function(event) {
+    event.preventDefault();
+    modal.style.display = "block";
+
+    document.body.style.overflow = "hidden";
+}
+
+closeButton.onclick = function() {
+    modal.style.display = "none";
+
+    document.body.style.overflow = "auto";
+}
+
+window.onclick = function(event) {
+    if (event.target === modal) {
+        modal.style.display = "none";
+        
+        document.body.style.overflow = "auto";
+    }
+}
+
+var secondaryModal = document.getElementById("secondaryAttachmentModal");
+var secondaryButton = document.getElementById("secondaryAttachmentButton");
+var secondaryCloseButton = document.getElementById("secondCloseButton");
+
+secondaryButton.onclick = function(event) {
+    event.preventDefault();
+    secondaryModal.style.display = "block";
+
+    document.body.style.overflow = "hidden";
+}
+
+secondaryCloseButton.onclick = function() {
+    secondaryModal.style.display = "none";
+
+    document.body.style.overflow = "auto";
+}
+
+window.onclick = function(event) {
+    if (event.target === secondaryModal) {
+        secondaryModal.style.display = "none";
+        
+        document.body.style.overflow = "auto";
+    }
+}
