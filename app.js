@@ -246,6 +246,7 @@ app.get("/getWeapons", (request, response) => {
   randomPrimary = getRandomAttachments({...randomPrimary}, amountOfAttachments);
 
   if (randomWildcard == "Overkill") {
+    delete primaries[Object.keys(randomPrimary)[0]];
     randomSecondary = getRandomItemsFromJSON({...primaries}, curLevel);
   }
 

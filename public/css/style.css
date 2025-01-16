@@ -1,3 +1,8 @@
+@font-face {
+    font-family: CODBO;
+    src: url("../Resources/fonts/CallOfOpsDuty.ttf");
+}
+
 body {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), 10%, #000000), url('../Resources/mainBackground.png');
     background-repeat: no-repeat;
@@ -89,7 +94,8 @@ button:active, #disclaimerButton:active {
 }
 
 .weaponName {
-    font-size: 42px;
+    font-size: 34px;
+    font-family: CODBO;
     margin: 0;
 }
 
@@ -113,7 +119,6 @@ button:active, #disclaimerButton:active {
 .weaponImage {
     height: 200px;
     max-width: 100%;
-    border-radius: 25px;
 }
 
 .attachements {
@@ -142,6 +147,7 @@ button:active, #disclaimerButton:active {
 .attachmentModals {
     display: none;
     position: fixed;
+    cursor: auto;
     z-index: 1;
     left: 0;
     top: 0;
