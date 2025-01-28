@@ -1,0 +1,42 @@
+{
+    "Concussion": {
+        "Level": [
+            "1"
+        ]
+    },
+    "Decoy Grenade": {
+        "Level": [
+            "35"
+        ]
+    },
+    "Flashbang": {
+        "Level": [
+            "6"
+        ]
+    },
+    "Prox Alarm": {
+        "Level": [
+            "23"
+        ]
+    },
+    "Shock Charge": {
+        "Level": [
+            "42"
+        ]
+    },
+    "Smoke": {
+        "Level": [
+            "17"
+        ]
+    },
+    "Spy Cam": {
+        "Level": [
+            "12"
+        ]
+    },
+    "Stim Shot": {
+        "Level": [
+            "30"
+        ]
+    }
+}

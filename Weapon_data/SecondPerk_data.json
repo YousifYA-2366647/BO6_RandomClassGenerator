@@ -1,0 +1,42 @@
+{
+    "Assassin": {
+        "Level": [
+            "5"
+        ]
+    },
+    "Bruiser": {
+        "Level": [
+            "53"
+        ]
+    },
+    "Engineer": {
+        "Level": [
+            "1"
+        ]
+    },
+    "Tracker": {
+        "Level": [
+            "29"
+        ]
+    },
+    "Forward Intel": {
+        "Level": [
+            "47"
+        ]
+    },
+    "Dispatcher": {
+        "Level": [
+            "11"
+        ]
+    },
+    "Fast Hands": {
+        "Level": [
+            "38"
+        ]
+    },
+    "Shadow": {
+        "Level": [
+            "1"
+        ]
+    }
+}

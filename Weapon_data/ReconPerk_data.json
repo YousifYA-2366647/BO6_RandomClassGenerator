@@ -1,0 +1,42 @@
+{
+    "Ghost": {
+        "Level": [
+            "17"
+        ]
+    },
+    "Tracker": {
+        "Level": [
+            "29"
+        ]
+    },
+    "Engineer": {
+        "Level": [
+            "1"
+        ]
+    },
+    "Vigilance": {
+        "Level": [
+            "6"
+        ]
+    },
+    "Cold-Blooded": {
+        "Level": [
+            "41"
+        ]
+    },
+    "Forward Intel": {
+        "Level": [
+            "47"
+        ]
+    },
+    "Ninja": {
+        "Level": [
+            "35"
+        ]
+    },
+    "Shrapnel Radar": {
+        "Level": [
+            "1"
+        ]
+    }
+}

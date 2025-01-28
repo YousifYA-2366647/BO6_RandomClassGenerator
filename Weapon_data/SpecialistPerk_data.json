@@ -1,0 +1,42 @@
+{
+    "Flak Jacket": {
+        "Level": [
+            "8"
+        ]
+    },
+    "Dispatcher": {
+        "Level": [
+            "11"
+        ]
+    },
+    "Quartermaster": {
+        "Level": [
+            "1"
+        ]
+    },
+    "Guardian": {
+        "Level": [
+            "32"
+        ]
+    },
+    "Fast Hands": {
+        "Level": [
+            "38"
+        ]
+    },
+    "Tac Mask": {
+        "Level": [
+            "44"
+        ]
+    },
+    "Gearhead": {
+        "Level": [
+            "50"
+        ]
+    },
+    "Shadow": {
+        "Level": [
+            "1"
+        ]
+    }
+}

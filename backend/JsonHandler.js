@@ -6,18 +6,18 @@ export class JsonHandler {
 
     filterItems(JsonObject, curLevel) {
         for (const key in JsonObject) {
-        if (JsonObject[key]['Level'] > curLevel) {
-            delete JsonObject[key];
-        }
-        else {
-            delete JsonObject[key]['Level'];
-        }
+            if (JsonObject[key]['Level'] > curLevel) {
+                delete JsonObject[key];
+            }
+            else {
+                delete JsonObject[key]['Level'];
+            }
         }
     }
   
     getRandomItemsFromJSON(JsonObject, curLevel) {
         if (Object.keys(JsonObject).length == 0) {
-        return {};
+            return {};
         }
     
         this.filterItems(JsonObject, curLevel);
@@ -34,18 +34,27 @@ export class JsonHandler {
     getRandomAttachments(weaponJson, amount) {
         let weaponName = Object.keys(weaponJson)[0];
         let attachments = weaponJson[weaponName];
+
+        if (!attachments) {
+            return weaponJson;
+        }
+
+        for (const key in attachments) {
+            let randomAttachment = attachments[key][Math.floor(Math.random()*attachments[key].length)];
+            attachments[key] = randomAttachment;
+        }
         
         let nonEmptyKeys = Object.keys(attachments).filter(key => attachments[key] !== "");
     
         let attachmentsToRemove = Math.max(0, nonEmptyKeys.length - amount);
     
         for (let i = 0; i < attachmentsToRemove; i++) {
-        let randomIndex = Math.floor(Math.random() * nonEmptyKeys.length);
-        let randomKey = nonEmptyKeys[randomIndex];
-    
-        attachments[randomKey] = "";
-    
-        nonEmptyKeys.splice(randomIndex, 1);
+            let randomIndex = Math.floor(Math.random() * nonEmptyKeys.length);
+            let randomKey = nonEmptyKeys[randomIndex];
+        
+            attachments[randomKey] = "";
+        
+            nonEmptyKeys.splice(randomIndex, 1);
         }
     
         return weaponJson;
@@ -58,25 +67,25 @@ export class JsonHandler {
         let amountOfS = 0;
     
         for (const perk in perks) {
-        if (Object.keys(enforcer).includes(perks[perk])) {
-            amountOfE++;
-        }
-        else if (Object.keys(recon).includes(perks[perk])) {
-            amountOfR++;
-        }
-        else if (Object.keys(specialist).includes(perks[perk])) {
-            amountOfS++;
-        }
+            if (Object.keys(enforcer).includes(perks[perk])) {
+                amountOfE++;
+            }
+            else if (Object.keys(recon).includes(perks[perk])) {
+                amountOfR++;
+            }
+            else if (Object.keys(specialist).includes(perks[perk])) {
+                amountOfS++;
+            }
         }
     
         if (amountOfE >= 3) {
-        perks.push("Enforcer");
+            perks.push("Enforcer");
         }
         else if (amountOfR >= 3) {
-        perks.push("Recon");
+            perks.push("Recon");
         }
         else if (amountOfS >= 3) {
-        perks.push("Strategist");
+            perks.push("Strategist");
         }
     
         return perks;

@@ -1,0 +1,97 @@
+{
+    "Scout Pulse": {
+        "Level": [
+            "1"
+        ]
+    },
+    "RC-XD": {
+        "Level": [
+            "5"
+        ]
+    },
+    "SAM Turret": {
+        "Level": [
+            "33"
+        ]
+    },
+    "UAV": {
+        "Level": [
+            "15"
+        ]
+    },
+    "Archangel Launcher": {
+        "Level": [
+            "9"
+        ]
+    },
+    "Counter UAV": {
+        "Level": [
+            "17"
+        ]
+    },
+    "Care Package": {
+        "Level": [
+            "24"
+        ]
+    },
+    "Napalm Strike": {
+        "Level": [
+            "30"
+        ]
+    },
+    "Hand Cannon": {
+        "Level": [
+            "1"
+        ]
+    },
+    "LDBR": {
+        "Level": [
+            "21"
+        ]
+    },
+    "Sentry Turret": {
+        "Level": [
+            "12"
+        ]
+    },
+    "Hellstorm": {
+        "Level": [
+            "1"
+        ]
+    },
+    "Watchdog Helo": {
+        "Level": [
+            "1"
+        ]
+    },
+    "A.G.R MK1": {
+        "Level": [
+            "27"
+        ]
+    },
+    "Interceptors": {
+        "Level": [
+            "47"
+        ]
+    },
+    "Strategic Bomber": {
+        "Level": [
+            "36"
+        ]
+    },
+    "H.A.R.P.": {
+        "Level": [
+            "42"
+        ]
+    },
+    "Chopper Gunner": {
+        "Level": [
+            "29"
+        ]
+    },
+    "Dreadnought": {
+        "Level": [
+            "54"
+        ]
+    }
+}

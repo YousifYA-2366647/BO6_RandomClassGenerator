@@ -1,0 +1,283 @@
+{
+    "9mm PM": {
+        "Level": [
+            "1"
+        ],
+        "Optic": [
+            "Remuda Mini Reflex",
+            "Otero Micro Dot",
+            "Kepler Microflex",
+            "Merlin Mini",
+            "Accu-Spot Reflex",
+            "Kepler Pistol Scope",
+            ""
+        ],
+        "Muzzle": [
+            "Suppressor",
+            "Compensator",
+            "Muzzle Brake",
+            "Ported Compensator",
+            ""
+        ],
+        "Barrel": [
+            "Gain-Twist Barrel",
+            "Long Barrel",
+            "Reinforced Barrel",
+            "Short Barrel",
+            "CHF Barrel",
+            ""
+        ],
+        "Magazine": [
+            "Extended Mag I",
+            "Fast Mag I",
+            "Extended Mag II",
+            " Fast Mag II",
+            ""
+        ],
+        "Rear Grip": [
+            "Quickdraw Grip",
+            "Assault Grip",
+            "Commando Grip",
+            "Ergonomic Grip",
+            "CQB Grip",
+            ""
+        ],
+        "Stock": [
+            "Akimbo 9mm Pm",
+            ""
+        ],
+        "Laser": [
+            "Steady Aim Laser",
+            "Fast Motion Laser",
+            "Tactical Laser",
+            "Strelok Laser",
+            "Target Laser",
+            ""
+        ],
+        "Fire Mod": [
+            "Rapid Fire",
+            "9x18mm Makarov Overpressured",
+            "Recoil Springs",
+            "9x18mm Makarov FMJ",
+            ""
+        ]
+    },
+    "Grekhova": {
+        "Level": [
+            "13"
+        ],
+        "Optic": [
+            "Remuda Mini Reflex",
+            "Otero Micro Dot",
+            "Kepler Microflex",
+            "Merlin Mini",
+            "Accu-Spot Reflex",
+            "Kepler Pistol Scope",
+            ""
+        ],
+        "Muzzle": [
+            "Suppressor",
+            "Compensator",
+            "Muzzle Brake",
+            "Ported Compensator",
+            ""
+        ],
+        "Barrel": [
+            "Gain-Twist Barrel",
+            "Long Barrel",
+            "Reinforced Barrel",
+            "Short Barrel",
+            "CHF Barrel",
+            ""
+        ],
+        "Magazine": [
+            "Extended Mag I",
+            "Fast Mag I",
+            "Extended Mag II",
+            " Extended Mag III",
+            ""
+        ],
+        "Rear Grip": [
+            "Quickdraw Grip",
+            "Assault Grip",
+            "Commando Grip",
+            "Ergonomic Grip",
+            "CQB Grip",
+            ""
+        ],
+        "Stock": [
+            "Weighted Stock",
+            "Akimbo Grekhova",
+            ""
+        ],
+        "Laser": [
+            "Steady Aim Laser",
+            "Fast Motion Laser",
+            "Tactical Laser",
+            "Strelok Laser",
+            "Target Laser",
+            ""
+        ],
+        "Fire Mod": [
+            "Rapid Fire",
+            "9x18mm Makarov Overpressured",
+            "Recoil Springs",
+            "9x18mm Makarov FMJ",
+            ""
+        ]
+    },
+    "GS45": {
+        "Level": [
+            "28"
+        ],
+        "Optic": [
+            "Remuda Mini Reflex",
+            "Otero Micro Dot",
+            "Kepler Microflex",
+            "Merlin Mini",
+            "Accu-Spot Reflex",
+            "Kepler Pistol Scope",
+            ""
+        ],
+        "Muzzle": [
+            "Suppressor",
+            "Compensator",
+            "Muzzle Brake",
+            "Ported Compensator",
+            ""
+        ],
+        "Barrel": [
+            "Gain-Twist Barrel",
+            "Long Barrel",
+            "Reinforced Barrel",
+            "Short Barrel",
+            "CHF Barrel",
+            ""
+        ],
+        "Magazine": [
+            "Extended Mag I",
+            "Fast Mag I",
+            "Extended Mag II",
+            " Fast Mag II",
+            ""
+        ],
+        "Rear Grip": [
+            "Quickdraw Grip",
+            "Assault Grip",
+            "Commando Grip",
+            "Ergonomic Grip",
+            "CQB Grip",
+            ""
+        ],
+        "Stock": [
+            "Akimbo GS45",
+            ""
+        ],
+        "Laser": [
+            "Steady Aim Laser",
+            "Fast Motion Laser",
+            "Tactical Laser",
+            "Strelok Laser",
+            "Target Laser",
+            ""
+        ],
+        "Fire Mod": [
+            "Rapid Fire",
+            ".45 ACP Overpressured",
+            "Recoil Springs",
+            ".45 ACP FMJ",
+            ""
+        ]
+    },
+    "Stryder .22": {
+        "Level": [
+            "40"
+        ],
+        "Optic": [
+            "Remuda Mini Reflex",
+            "Otero Micro Dot",
+            "Kepler Microflex",
+            "Merlin Mini",
+            "Accu-Spot Reflex",
+            "Kepler Pistol Scope",
+            ""
+        ],
+        "Muzzle": [
+            "Suppressor",
+            "Compensator",
+            "Muzzle Brake",
+            "Ported Compensator",
+            ""
+        ],
+        "Barrel": [
+            "Gain-Twist Barrel",
+            "Long Barrel",
+            "Reinforced Barrel",
+            "Short Barrel",
+            "CHF Barrel",
+            ""
+        ],
+        "Magazine": [
+            "Extended Mag I",
+            "Fast Mag I",
+            "Extended Mag II",
+            " Fast Mag II",
+            ""
+        ],
+        "Rear Grip": [
+            "Quickdraw Grip",
+            "Assault Grip",
+            "Commando Grip",
+            "Ergonomic Grip",
+            "CQB Grip",
+            ""
+        ],
+        "Stock": [
+            "Akimbo Stryder .22",
+            ""
+        ],
+        "Laser": [
+            "Steady Aim Laser",
+            "Fast Motion Laser",
+            "Tactical Laser",
+            "Strelok Laser",
+            "Target Laser",
+            ""
+        ],
+        "Fire Mod": [
+            "Rapid Fire",
+            ".22 WMR Overpressured",
+            "Recoil Springs",
+            ".22 WMR FMJ",
+            ""
+        ]
+    },
+    "Sirin 9mm": {
+        "Level": [
+            "1"
+        ],
+        "Optic": [
+            "Iron Sight",
+            "Carry Handle Sight",
+            ""
+        ],
+        "Muzzle": [
+            "Suppressor",
+            ""
+        ],
+        "Barrel": [
+            "Long Barrel",
+            ""
+        ],
+        "Underbarrel": [
+            "Vertical Foregrip",
+            "Lightweight Foregrip",
+            ""
+        ],
+        "Magazine": [
+            "Extended Mag I",
+            "Extended Mag II",
+            ""
+        ]
+    }
+}

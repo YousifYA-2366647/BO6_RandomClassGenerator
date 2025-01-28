@@ -1,5 +1,5 @@
 import { getCookies } from "./backend/cookieHandler.js";
-import { csvParser } from "./backend/csvParser.js";
+import { getWeaponsFromJson } from "./backend/JsonParser.js";
 import { JsonHandler } from "./backend/JsonHandler.js";
 import express from "express";
 
@@ -16,39 +16,38 @@ app.get("/generateClass", (request, response) => {
   response.render("pages/generatedClassPage");
 })
 
-app.get("/getWeapons", (request, response) => {
-  let parser = new csvParser();
+app.get("/getWeapons", async (request, response) => {
   let jsonHandler = new JsonHandler();
 
   let primaries = {};
   let secondaries = {};
   let melees = {};
 
-  let lethals = parser.getEquipmentFromCSV("Weapon_data/Lethal_data.csv");
-  let tacticals = parser.getEquipmentFromCSV("Weapon_data/Tactical_data.csv");
-  let fieldUpgrades = parser.getEquipmentFromCSV("Weapon_data/FieldUpgrade_data.csv");
+  let lethals = await getWeaponsFromJson("Weapon_data/Lethal_data.json");
+  let tacticals = await getWeaponsFromJson("Weapon_data/Tactical_data.json");
+  let fieldUpgrades = await getWeaponsFromJson("Weapon_data/FieldUpgrade_data.json");
 
-  let enforcerPerks = parser.getEquipmentFromCSV("Weapon_data/EnforcerPerk_data.csv");
-  let reconPerks = parser.getEquipmentFromCSV("Weapon_data/ReconPerk_data.csv");
-  let strategistPerks = parser.getEquipmentFromCSV("Weapon_data/SpecialistPerk_data.csv");
-  let firstPerk = parser.getEquipmentFromCSV("Weapon_data/FirstPerk_data.csv");
-  let secondPerk = parser.getEquipmentFromCSV("Weapon_data/SecondPerk_data.csv");
-  let thirdPerk = parser.getEquipmentFromCSV("Weapon_data/ThirdPerk_data.csv");
+  let enforcerPerks = await getWeaponsFromJson("Weapon_data/EnforcerPerk_data.json");
+  let reconPerks = await getWeaponsFromJson("Weapon_data/ReconPerk_data.json");
+  let strategistPerks = await getWeaponsFromJson("Weapon_data/SpecialistPerk_data.json");
+  let firstPerk = await getWeaponsFromJson("Weapon_data/FirstPerk_data.json");
+  let secondPerk = await getWeaponsFromJson("Weapon_data/SecondPerk_data.json");
+  let thirdPerk = await getWeaponsFromJson("Weapon_data/ThirdPerk_data.json");
 
-  let wildcards = parser.getEquipmentFromCSV("Weapon_data/Wildcard_data.csv");
+  let wildcards = await getWeaponsFromJson("Weapon_data/Wildcard_data.json");
 
-  let scorestreaks = parser.getEquipmentFromCSV("Weapon_data/Scorestreak_data.csv");
+  let scorestreaks = await getWeaponsFromJson("Weapon_data/Scorestreak_data.json");
 
-  let primaryFiles = ["Weapon_data/AR_data.csv", "Weapon_data/SMG_data.csv", "Weapon_data/Shotgun_data.csv", "Weapon_data/LMG_data.csv", "Weapon_data/MarksmanRifle_data.csv", "Weapon_data/SniperRifle_data.csv"];
-  let secondaryFiles = ["Weapon_data/Pistol_data.csv", "Weapon_data/Launcher_data.csv"];
-  primaryFiles.forEach((file) => {
-    Object.assign(primaries, parser.getWeaponsFromCSV(file));
-  })
-  secondaryFiles.forEach((file) => {
-    Object.assign(secondaries, parser.getWeaponsFromCSV(file));
-  })
+  let primaryFiles = ["Weapon_data/AR_data.json", "Weapon_data/SMG_data.json", "Weapon_data/Shotgun_data.json", "Weapon_data/LMG_data.json", "Weapon_data/MarksmanRifle_data.json", "Weapon_data/SniperRifle_data.json"];
+  let secondaryFiles = ["Weapon_data/Pistol_data.json", "Weapon_data/Launcher_data.json"];
 
-  Object.assign(melees, parser.getWeaponsFromCSV("Weapon_data/Melee_data.csv"));
+  const primaryWeapons = await Promise.all(primaryFiles.map(file => getWeaponsFromJson(file)));
+  primaryWeapons.forEach(value => Object.assign(primaries, value));
+  
+  const secondaryWeapons = await Promise.all(secondaryFiles.map(file => getWeaponsFromJson(file)));
+  secondaryWeapons.forEach(value => Object.assign(secondaries, value));
+
+  Object.assign(melees, await getWeaponsFromJson("Weapon_data/Melee_data.json"));
 
   let curLevel = getCookies(request, 'curLevel');
   if (curLevel == "") {

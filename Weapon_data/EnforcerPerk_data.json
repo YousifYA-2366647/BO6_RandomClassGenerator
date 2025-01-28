@@ -1,0 +1,37 @@
+{
+    "Assassin": {
+        "Level": [
+            "5"
+        ]
+    },
+    "Bruiser": {
+        "Level": [
+            "53"
+        ]
+    },
+    "Dexterity": {
+        "Level": [
+            "20"
+        ]
+    },
+    "Gung-Ho": {
+        "Level": [
+            "1"
+        ]
+    },
+    "Double Time": {
+        "Level": [
+            "14"
+        ]
+    },
+    "Bankroll": {
+        "Level": [
+            "23"
+        ]
+    },
+    "Scavenger": {
+        "Level": [
+            "26"
+        ]
+    }
+}

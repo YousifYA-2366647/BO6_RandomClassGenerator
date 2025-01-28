@@ -1,0 +1,47 @@
+{
+    "Frag Grenade": {
+        "Level": [
+            "1"
+        ]
+    },
+    "Semtex": {
+        "Level": [
+            "9"
+        ]
+    },
+    "C4": {
+        "Level": [
+            "14"
+        ]
+    },
+    "Thermo Grenade": {
+        "Level": [
+            "21"
+        ]
+    },
+    "Impact Grenade": {
+        "Level": [
+            "26"
+        ]
+    },
+    "Molotov": {
+        "Level": [
+            "32"
+        ]
+    },
+    "Blast Trap": {
+        "Level": [
+            "41"
+        ]
+    },
+    "Drill Charge": {
+        "Level": [
+            "50"
+        ]
+    },
+    "Combat Axe": {
+        "Level": [
+            "53"
+        ]
+    }
+}

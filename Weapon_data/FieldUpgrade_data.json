@@ -1,0 +1,57 @@
+{
+    "Acoustic Amp": {
+        "Level": [
+            "41"
+        ]
+    },
+    "Assault Pack": {
+        "Level": [
+            "1"
+        ]
+    },
+    "Spring Mine": {
+        "Level": [
+            "1"
+        ]
+    },
+    "Neurogas": {
+        "Level": [
+            "48"
+        ]
+    },
+    "Morphine Injector": {
+        "Level": [
+            "44"
+        ]
+    },
+    "Scrambler": {
+        "Level": [
+            "18"
+        ]
+    },
+    "Signal Lure": {
+        "Level": [
+            "27"
+        ]
+    },
+    "Sleeper Agent": {
+        "Level": [
+            "51"
+        ]
+    },
+    "Tactical Insertion": {
+        "Level": [
+            "39"
+        ]
+    },
+    "Trophy System": {
+        "Level": [
+            "12"
+        ]
+    },
+    "War Cry": {
+        "Level": [
+            "35"
+        ]
+    }
+}
