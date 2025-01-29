@@ -187,15 +187,24 @@ function setupWildcard(wildcard) {
     let randomWildcard = document.getElementById("randomWildcard");
     randomWildcard.innerHTML = '';
 
-    let wildcardImage = document.createElement('img');
-    wildcardImage.className = "wildcardImage";
-    wildcardImage.src = getWildcardImagePath(wildcard);
+    if (wildcard != '') {
+        let wildcardImage = document.createElement('img');
+        wildcardImage.className = "wildcardImage";
+        wildcardImage.src = getWildcardImagePath(wildcard);
+
+        randomWildcard.appendChild(wildcardImage);
+    }
+    else {
+        let emptyDiv = document.createElement('div');
+        emptyDiv.className = "wildcardImage";
+        
+        randomWildcard.appendChild(emptyDiv);
+    }
 
     let wildcardText = document.createElement('p');
     wildcardText.className = "wildcardText";
     wildcardText.innerText = wildcard;
 
-    randomWildcard.appendChild(wildcardImage);
     randomWildcard.appendChild(wildcardText);
 }
 
