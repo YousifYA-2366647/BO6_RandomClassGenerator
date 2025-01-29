@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 1, 0), 10%, #000000), url('../Resources/mainBackground.png');
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), 10%, #000000), url('../Resources/mainBackground.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
