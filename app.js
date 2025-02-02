@@ -109,7 +109,7 @@ app.get("/getWeapons", async (request, response) => {
 
   if (randomWildcard == "Overkill") {
     delete primaries[Object.keys(randomPrimary)[0]];
-    randomSecondary = jsonHandler.getRandomItemsFromJSON({...primaries}, curLevel);
+    randomSecondary = jsonHandler.getRandomItemsFromJSON({...primaries, ...secondaries}, curLevel);
   }
 
   randomSecondary = jsonHandler.getRandomAttachments({...randomSecondary}, 5);

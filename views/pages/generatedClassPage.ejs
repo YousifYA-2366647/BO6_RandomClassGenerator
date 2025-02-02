@@ -7,7 +7,11 @@
         <div id="randomWeapons">
                 <a href="#" id="primaryAttachmentButton">
                     <div id="randomPrimary">
-                        <p class="weaponName" id="primaryName"></p>
+                        <div class="weaponText">
+                            <p id="primaryTitle">Primary:</p>
+                            <p class="weaponName" id="primaryName"></p>
+                            <p class="circles" id="primaryAttachmentsAmount"></p>
+                        </div>
                         <img class="weaponImage" id="primaryImage">
                     </div>
                     <div class="attachmentTooltip" id="primaryAttachmentTooltip">
@@ -16,7 +20,11 @@
                 </a>
                 <a href="#" id="secondaryAttachmentButton">
                     <div id="randomSecondary">
-                        <p class="weaponName" id="secondaryName"></p>
+                        <div class="weaponText">
+                            <p id="secondaryTitle">Secondary:</p>
+                            <p class="weaponName" id="secondaryName"></p>
+                            <p class="circles" id="secondaryAttachmentsAmount"></p>
+                        </div>
                         <img class="weaponImage" id="secondaryImage">
                     </div>
                     <div class="attachmentTooltip" id="secondaryAttachmentTooltip">
@@ -24,29 +32,63 @@
                     </div>
                 </a>
             <div id="randomMelee">
-                <p class="weaponName" id="meleeName"></p>
+                <div class="weaponText">
+                    <p id="meleeTitle">Melee:</p>
+                    <p class="weaponName" id="meleeName"></p>
+                </div>
                 <img class="weaponImage" id="meleeImage">
             </div>
         </div>
     
         <div id="randomEquipment">
-            <div id="randomLethal">
-    
+            <div id="lethalDivision">
+                <p class="equipmentClassifier">Lethal: </p>
+                <div id="randomLethal">
+        
+                </div>
             </div>
-            <div id="randomTactical">
-    
+            <div id="tacticalDivision">
+                <p class="equipmentClassifier">Tactical: </p>
+                <div id="randomTactical">
+        
+                </div>
             </div>
-            <div id="randomFieldUpgrade">
-    
+            <div id="fieldUpgradeDivision">
+                <p class="equipmentClassifier">Field Upgrade: </p>
+                <div id="randomFieldUpgrade">
+        
+                </div>
             </div>
         </div>
     
         <div id="randomPerks">
-            
+            <div class="perkDivision">
+                <p class="perkClassifier">Perk 1:</p>
+                <div class="perkDiv" id="perk1"></div>
+            </div>
+            <div class="perkDivision">
+                <p class="perkClassifier">Perk 2:</p>
+                <div class="perkDiv" id="perk2"></div>
+            </div>
+            <div class="perkDivision">
+                <p class="perkClassifier">Perk 3:</p>
+                <div class="perkDiv" id="perk3"></div>
+            </div>
+            <div class="perkDivision">
+                <p class="perkClassifier">Perk 4:</p>
+                <div class="perkDiv" id="perk4"></div>
+            </div>
+            <div class="perkDivision">
+                <p class="perkClassifier">Specialty:</p>
+                <div class="perkDiv" id="Specialty"></div>
+            </div>
         </div>
     
-        <div id="randomWildcard">
-            
+        <div id="wildcardDivision">
+            <p id="wildcardClassifier">Wildcard:</p>
+            <div id="randomWildcard">
+                
+            </div>
         </div>
     
         <div id="randomScorestreaks">

@@ -46,13 +46,13 @@ export class JsonHandler {
         
         let nonEmptyKeys = Object.keys(attachments).filter(key => attachments[key] !== "");
     
-        let attachmentsToRemove = Math.max(0, nonEmptyKeys.length - amount);
+        let attachmentsToRemove = Math.max(0, Object.keys(attachments).length - amount);
     
         for (let i = 0; i < attachmentsToRemove; i++) {
             let randomIndex = Math.floor(Math.random() * nonEmptyKeys.length);
             let randomKey = nonEmptyKeys[randomIndex];
         
-            attachments[randomKey] = "";
+            delete attachments[randomKey];
         
             nonEmptyKeys.splice(randomIndex, 1);
         }

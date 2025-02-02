@@ -43,11 +43,19 @@ function getEquipmentImagePath(equipmentName) {
 
 function setupPrimary(jsonObject) {
     let primaryAttachements = document.getElementById("primaryAttachments");
+    document.getElementById("primaryAttachmentsAmount").innerHTML = '';
     primaryAttachements.innerHTML = '';
     document.getElementById("primaryName").innerText = Object.keys(jsonObject)[0];
     document.getElementById("primaryImage").src = getWeaponImagePath(Object.keys(jsonObject)[0], null, null);
 
+
     let chosenAttachements = Object.values(jsonObject)[0];
+    for (const key in chosenAttachements) {
+        if (!chosenAttachements[key]) {
+            document.getElementById("primaryAttachmentsAmount").innerHTML += "&#x25CB;"
+        }
+    }
+
     for (const key in chosenAttachements) {
         if (!chosenAttachements[key]) {
             continue;
@@ -64,6 +72,8 @@ function setupPrimary(jsonObject) {
         image.src = ImagePath;
 
         primaryAttachements.appendChild(image);
+
+        document.getElementById("primaryAttachmentsAmount").innerHTML += "&#x25CF;"
     }
     if (chosenAttachements.length > 5) {
         document.getElementById("primaryAttachmentModalContent").style.marginTop = (13 - chosenAttachements.length) + "%"
@@ -73,11 +83,18 @@ function setupPrimary(jsonObject) {
 
 function setupSecondary(jsonObject) {
     let secondaryAttachements = document.getElementById("secondaryAttachments");
+    document.getElementById("secondaryAttachmentsAmount").innerHTML = '';
     secondaryAttachements.innerHTML = '';
     document.getElementById("secondaryName").innerText = Object.keys(jsonObject)[0];
     document.getElementById("secondaryImage").src = getWeaponImagePath(Object.keys(jsonObject)[0], null, null);
 
     let chosenAttachementsSecondary = Object.values(jsonObject)[0];
+    for (const key in chosenAttachementsSecondary) {
+        if (!chosenAttachementsSecondary[key]) {
+            document.getElementById("secondaryAttachmentsAmount").innerHTML += "&#x25CB;"
+        }
+    }
+
     for (const key in chosenAttachementsSecondary) {
         if (!chosenAttachementsSecondary[key]) {
             continue;
@@ -94,6 +111,8 @@ function setupSecondary(jsonObject) {
         image.src = ImagePath;
 
         secondaryAttachements.appendChild(image);
+
+        document.getElementById("secondaryAttachmentsAmount").innerHTML += "&#x25CF;"
     }
 }
 
@@ -161,12 +180,18 @@ function setupEquipment(lethalJsonObject, tacticalJsonObject, fieldJsonObject) {
 }
 
 function setupPerks(perkJsonObject) {
-    let perkDiv = document.getElementById("randomPerks");
-    perkDiv.innerHTML = '';
-
+    let index = 1;
     for (const key in perkJsonObject) {
-        let newPerkDiv = document.createElement('div');
-        newPerkDiv.className = 'perkDiv';
+        let perkDivision = document.getElementById("perk" + index);
+        if (perkJsonObject[key] == "Enforcer" || perkJsonObject[key] == "Recon" || perkJsonObject[key] == "Strategist") {
+            perkDivision = document.getElementById("Specialty");
+        }
+
+        perkDivision.innerHTML = '';
+        document.getElementById("Specialty").innerHTML = '';
+        if (index < 4) {
+            document.getElementById("perk4").innerHTML = '';
+        }
 
         let image = document.createElement('img');
         image.className = "perkImage";
@@ -176,10 +201,10 @@ function setupPerks(perkJsonObject) {
         paragraph.className = 'perk';
         paragraph.innerText = perkJsonObject[key];
 
-        newPerkDiv.appendChild(image);
-        newPerkDiv.appendChild(paragraph);
+        perkDivision.appendChild(image);
+        perkDivision.appendChild(paragraph);
 
-        perkDiv.appendChild(newPerkDiv);
+        index++;
     }
 }
 
@@ -261,7 +286,7 @@ function getRandomWeapons() {
     })
 }
 
-window.onload = getRandomWeapons();
+document.addEventListener("DOMContentLoaded", getRandomWeapons);
 
 document.getElementById("regenerateButton").addEventListener('click', getRandomWeapons);
 
