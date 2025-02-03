@@ -322,7 +322,7 @@ button:active, #disclaimerButton:active {
 
 .equipment {
     color: white;
-    font-size: 20px;
+    font-size: 18px;
     font-family: CODBO;
     margin: auto;
     width: 100%;
@@ -425,7 +425,7 @@ button:active, #disclaimerButton:active {
     color: white;
     font-size: 20px;
     font-family: CODBO;
-    margin-left: 10px;
+    width: 100%;
 }
 
 /*scorestreaks*/
