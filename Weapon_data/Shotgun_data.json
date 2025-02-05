@@ -102,11 +102,11 @@
             ""
         ],
         "Barrel": [
+            "Gain-Twist Barrel",
             "Long Barrel",
-            "Heavy Barrel",
             "Reinforced Barrel",
-            "Combat Barrel",
-            "Quick Load Barrel",
+            "Short Barrel",
+            "CHF Barrel",
             ""
         ],
         "Underbarrel": [
