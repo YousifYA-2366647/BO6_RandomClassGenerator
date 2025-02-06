@@ -70,6 +70,7 @@ function setupPrimary(jsonObject) {
             continue;
         }
         image.src = ImagePath;
+        image.alt = chosenAttachements[key];
 
         primaryAttachements.appendChild(image);
 
@@ -109,6 +110,7 @@ function setupSecondary(jsonObject) {
             continue;
         }
         image.src = ImagePath;
+        image.alt = chosenAttachementsSecondary[key];
 
         secondaryAttachements.appendChild(image);
 
@@ -176,6 +178,27 @@ function setupEquipment(lethalJsonObject, tacticalJsonObject, fieldJsonObject) {
         newFieldDiv.appendChild(paragraph);
 
         fieldDiv.append(newFieldDiv);
+    }
+
+    if (Object.keys(lethalJsonObject).length > 1) {
+        document.getElementById("lethalClassifier").innerText = "Lethals:";
+    }
+    else {
+        document.getElementById("lethalClassifier").innerText = "Lethal:";
+    }
+    
+    if (Object.keys(tacticalJsonObject).length > 1) {
+        document.getElementById("tacticalClassifier").innerText = "Tacticals:";
+    }
+    else {
+        document.getElementById("tacticalClassifier").innerText = "Tactical:";
+    }
+    
+    if (Object.keys(fieldJsonObject).length > 1) {
+        document.getElementById("fieldClassifier").innerText = "Field Upgrades:";
+    }
+    else {
+        document.getElementById("fieldClassifier").innerText = "Field Upgrade:";
     }
 }
 
@@ -307,14 +330,6 @@ closeButton.onclick = function() {
     document.body.style.overflow = "auto";
 }
 
-window.onclick = function(event) {
-    if (event.target === modal) {
-        modal.style.display = "none";
-        
-        document.body.style.overflow = "auto";
-    }
-}
-
 var secondaryModal = document.getElementById("secondaryAttachmentModal");
 var secondaryButton = document.getElementById("secondaryAttachmentButton");
 var secondaryCloseButton = document.getElementById("secondCloseButton");
@@ -335,6 +350,11 @@ secondaryCloseButton.onclick = function() {
 window.onclick = function(event) {
     if (event.target === secondaryModal) {
         secondaryModal.style.display = "none";
+        
+        document.body.style.overflow = "auto";
+    }
+    else if (event.target === modal) {
+        modal.style.display = "none";
         
         document.body.style.overflow = "auto";
     }
