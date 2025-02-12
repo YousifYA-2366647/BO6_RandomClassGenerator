@@ -50,6 +50,7 @@ function setupPrimary(jsonObject) {
 
 
     let chosenAttachements = Object.values(jsonObject)[0];
+    console.log(JSON.stringify(chosenAttachements));
     for (const key in chosenAttachements) {
         if (!chosenAttachements[key]) {
             document.getElementById("primaryAttachmentsAmount").innerHTML += "&#x25CB;"

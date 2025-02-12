@@ -1,10 +1,25 @@
 import { getCookies } from "./backend/cookieHandler.js";
-import { getWeaponsFromJson } from "./backend/JsonParser.js";
+import { JsonParser } from "./backend/JsonParser.js";
 import { JsonHandler } from "./backend/JsonHandler.js";
 import express from "express";
 
 const app = express();
 const APP_PORT = 8080;
+
+const primaryRetriever = new JsonParser();
+const secondaryRetriever = new JsonParser();
+const meleeRetriever = new JsonParser();
+const lethalRetriever = new JsonParser();
+const tacticalRetriever = new JsonParser();
+const fieldUpgradeRetriever = new JsonParser();
+const enforcerRetriever = new JsonParser();
+const reconRetriever = new JsonParser();
+const strategistRetriever = new JsonParser();
+const firstPerkRetriever = new JsonParser();
+const secondPerkRetriever = new JsonParser();
+const thirdPerkRetriever = new JsonParser();
+const wildcardRetriever = new JsonParser();
+const scorestreakRetriever = new JsonParser();
 
 app.set('view engine', 'ejs');
 
@@ -21,33 +36,31 @@ app.get("/getWeapons", async (request, response) => {
 
   let primaries = {};
   let secondaries = {};
-  let melees = {};
+  let melees = await meleeRetriever.getWeaponsFromJson("Weapon_data/Melee_data.json");
 
-  let lethals = await getWeaponsFromJson("Weapon_data/Lethal_data.json");
-  let tacticals = await getWeaponsFromJson("Weapon_data/Tactical_data.json");
-  let fieldUpgrades = await getWeaponsFromJson("Weapon_data/FieldUpgrade_data.json");
+  let lethals = await lethalRetriever.getWeaponsFromJson("Weapon_data/Lethal_data.json");
+  let tacticals = await tacticalRetriever.getWeaponsFromJson("Weapon_data/Tactical_data.json");
+  let fieldUpgrades = await fieldUpgradeRetriever.getWeaponsFromJson("Weapon_data/FieldUpgrade_data.json");
 
-  let enforcerPerks = await getWeaponsFromJson("Weapon_data/EnforcerPerk_data.json");
-  let reconPerks = await getWeaponsFromJson("Weapon_data/ReconPerk_data.json");
-  let strategistPerks = await getWeaponsFromJson("Weapon_data/SpecialistPerk_data.json");
-  let firstPerk = await getWeaponsFromJson("Weapon_data/FirstPerk_data.json");
-  let secondPerk = await getWeaponsFromJson("Weapon_data/SecondPerk_data.json");
-  let thirdPerk = await getWeaponsFromJson("Weapon_data/ThirdPerk_data.json");
+  let enforcerPerks = await enforcerRetriever.getWeaponsFromJson("Weapon_data/EnforcerPerk_data.json");
+  let reconPerks = await reconRetriever.getWeaponsFromJson("Weapon_data/ReconPerk_data.json");
+  let strategistPerks = await strategistRetriever.getWeaponsFromJson("Weapon_data/SpecialistPerk_data.json");
+  let firstPerk = await firstPerkRetriever.getWeaponsFromJson("Weapon_data/FirstPerk_data.json");
+  let secondPerk = await secondPerkRetriever.getWeaponsFromJson("Weapon_data/SecondPerk_data.json");
+  let thirdPerk = await thirdPerkRetriever.getWeaponsFromJson("Weapon_data/ThirdPerk_data.json");
 
-  let wildcards = await getWeaponsFromJson("Weapon_data/Wildcard_data.json");
+  let wildcards = await wildcardRetriever.getWeaponsFromJson("Weapon_data/Wildcard_data.json");
 
-  let scorestreaks = await getWeaponsFromJson("Weapon_data/Scorestreak_data.json");
+  let scorestreaks = await scorestreakRetriever.getWeaponsFromJson("Weapon_data/Scorestreak_data.json");
 
   let primaryFiles = ["Weapon_data/AR_data.json", "Weapon_data/SMG_data.json", "Weapon_data/Shotgun_data.json", "Weapon_data/LMG_data.json", "Weapon_data/MarksmanRifle_data.json", "Weapon_data/SniperRifle_data.json"];
   let secondaryFiles = ["Weapon_data/Pistol_data.json", "Weapon_data/Launcher_data.json"];
 
-  const primaryWeapons = await Promise.all(primaryFiles.map(file => getWeaponsFromJson(file)));
+  const primaryWeapons = await Promise.all(primaryFiles.map(file => primaryRetriever.getWeaponsFromJson(file)));
   primaryWeapons.forEach(value => Object.assign(primaries, value));
   
-  const secondaryWeapons = await Promise.all(secondaryFiles.map(file => getWeaponsFromJson(file)));
+  const secondaryWeapons = await Promise.all(secondaryFiles.map(file => secondaryRetriever.getWeaponsFromJson(file)));
   secondaryWeapons.forEach(value => Object.assign(secondaries, value));
-
-  Object.assign(melees, await getWeaponsFromJson("Weapon_data/Melee_data.json"));
 
   let curLevel = getCookies(request, 'curLevel');
   if (curLevel == "") {
