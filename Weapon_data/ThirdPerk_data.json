@@ -1,7 +1,7 @@
 {
 	"Slipstream": {
 		"Level": [
-			"1"
+			"0"
 		]
 	},
     "Double Time": {
@@ -26,7 +26,7 @@
     },
     "Shrapnel Radar": {
         "Level": [
-            "1"
+            "0"
         ]
     },
     "Quartermaster": {

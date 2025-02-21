@@ -36,7 +36,12 @@
     },
 	"Slipstream": {
 		"Level": [
-			"1"
+			"0"
+		]
+	},
+	"Hunter's Instinct": {
+		"Level": [
+			"0"
 		]
 	}
 }

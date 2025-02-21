@@ -4,9 +4,9 @@ export class JsonHandler {
         
     }
 
-    filterItems(JsonObject, curLevel) {
+    filterItems(JsonObject, curLevel, includeDLC) {
         for (const key in JsonObject) {
-            if (JsonObject[key]['Level'] > curLevel) {
+            if ((JsonObject[key]['Level'] > curLevel) || (JsonObject[key]['Level'] == 0 && !includeDLC)) {
                 delete JsonObject[key];
             }
             else {
@@ -15,12 +15,12 @@ export class JsonHandler {
         }
     }
   
-    getRandomItemsFromJSON(JsonObject, curLevel) {
+    getRandomItemsFromJSON(JsonObject, curLevel, includeDLC) {
         if (Object.keys(JsonObject).length == 0) {
             return {};
         }
     
-        this.filterItems(JsonObject, curLevel);
+        this.filterItems(JsonObject, curLevel, includeDLC);
     
         let randomEntry = Object.entries(JsonObject)[Math.floor(Math.random()*Object.keys(JsonObject).length)];
     

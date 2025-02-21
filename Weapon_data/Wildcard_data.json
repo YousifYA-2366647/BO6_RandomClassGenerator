@@ -11,7 +11,7 @@
     },
     "High Roller": {
         "Level": [
-            "1"
+            "0"
         ]
     },
     "Overkill": {
@@ -38,5 +38,10 @@
         "Level": [
             "1"
         ]
-    }
+    },
+	"Flyswatter": {
+		"Level": [
+			"0"
+		]
+	}
 }

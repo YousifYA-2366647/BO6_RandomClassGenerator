@@ -11,12 +11,37 @@
     },
     "Power Drill": {
         "Level": [
-            "1"
+            "0"
         ]
     },
     "Cleaver": {
         "Level": [
-            "1"
+            "0"
         ]
-    }
+    },
+	"Katanas": {
+		"Level": [
+			"0"
+		]
+	},
+	"Skateboard": {
+		"Level": [
+			"0"
+		]
+	},
+	"Bo Staff": {
+		"Level": [
+			"0"
+		]
+	},
+	"Sai": {
+		"Level": [
+			"0"
+		]
+	},
+	"Nunchaku": {
+		"Level": [
+			"0"
+		]
+	}
 }

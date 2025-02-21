@@ -58,6 +58,7 @@
             "Fast Mag I",
             "Extended Mag II",
             "Fast Mag II",
+			"Belt Fed",
             ""
         ],
         "Rear Grip": [
@@ -151,6 +152,7 @@
             "Fast Mag I",
             "Extended Mag II",
             "Fast Mag II",
+			"Belt Fed",
             ""
         ],
         "Rear Grip": [
@@ -245,6 +247,7 @@
             "Extended Mag II",
             "Extended Mag III",
             "Extended Mag IV",
+			"Belt Fed",
             ""
         ],
         "Rear Grip": [
@@ -281,7 +284,7 @@
     },
     "Feng 82": {
         "Level": [
-            "1"
+            "0"
         ],
         "Optic": [
             "Kepler Microflex",
@@ -337,6 +340,7 @@
             "Extended Mag I",
             "Fast Mag I",
             "Extended Mag II",
+			"Belt Fed",
             ""
         ],
         "Rear Grip": [

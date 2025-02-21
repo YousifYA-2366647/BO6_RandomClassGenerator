@@ -1,0 +1,47 @@
+{
+    "Sirin 9mm": {
+        "Level": [
+            "0"
+        ],
+        "Optic": [
+            "Iron Sight",
+            "Carry Handle Sight",
+            ""
+        ],
+        "Muzzle": [
+            "Suppressor",
+            ""
+        ],
+        "Barrel": [
+            "Long Barrel",
+            ""
+        ],
+        "Underbarrel": [
+            "Vertical Foregrip",
+            "Lightweight Foregrip",
+            ""
+        ],
+        "Magazine": [
+            "Extended Mag I",
+            "Extended Mag II",
+            ""
+        ]
+    },
+	"D1.3 Sector": {
+		"Level": [
+			"0"
+		],
+		"Barrel": [
+			""
+		],
+		"Underbarrel": [
+			""
+		],
+		"Magazine": [
+			""
+		],
+		"Stock": [
+			""
+		]
+	}
+}

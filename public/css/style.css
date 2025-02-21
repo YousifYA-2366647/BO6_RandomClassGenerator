@@ -21,6 +21,16 @@ button {
     margin: 10px auto auto auto;
 }
 
+#homeButton {
+    float: left;
+    font-weight: bold;
+    color: white;
+}
+
+#homeButton:hover {
+    cursor: pointer;
+}
+
 #randomClassBody {
     height: 100%;
 }
@@ -63,7 +73,15 @@ button:active, #disclaimerButton:active {
     background-color: #242424;
 }
 
-#level {
+#settings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    width: 20%;
+    margin: auto;
+}
+
+#level, #DLC {
     display: flex;
     flex-direction: column;
     color: white;

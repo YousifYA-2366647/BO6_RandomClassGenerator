@@ -15,6 +15,7 @@ export class JsonParser {
             }
             return JSON.parse(JSON.stringify(this.retrievedData[filename]));
         } catch (err) {
+            console.log(filename);
             console.error("error reading file: " + err);
             throw err;
         }

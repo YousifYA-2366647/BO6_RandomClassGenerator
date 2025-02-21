@@ -251,33 +251,5 @@
             ".22 WMR FMJ",
             ""
         ]
-    },
-    "Sirin 9mm": {
-        "Level": [
-            "1"
-        ],
-        "Optic": [
-            "Iron Sight",
-            "Carry Handle Sight",
-            ""
-        ],
-        "Muzzle": [
-            "Suppressor",
-            ""
-        ],
-        "Barrel": [
-            "Long Barrel",
-            ""
-        ],
-        "Underbarrel": [
-            "Vertical Foregrip",
-            "Lightweight Foregrip",
-            ""
-        ],
-        "Magazine": [
-            "Extended Mag I",
-            "Extended Mag II",
-            ""
-        ]
     }
 }

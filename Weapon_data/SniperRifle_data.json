@@ -271,7 +271,7 @@
     },
     "AMR Mod4": {
         "Level": [
-            "1"
+            "0"
         ],
         "Optic": [
             "Iron Sight",
@@ -295,7 +295,8 @@
             "VMF Variable Scope",
             "Redwell Custom Zoom",
             "Otero Thermal 2x",
-            "Thermal 6x"
+            "Thermal 6x",
+			""
         ],
         "Muzzle": [
             "Suppressor",
@@ -355,7 +356,8 @@
             "Rapid Fire",
             ".50 BMG Overpressured",
             ".50 BMG FMJ",
-            "Recoil Springs"
+            "Recoil Springs",
+			""
         ]
     }
 }
