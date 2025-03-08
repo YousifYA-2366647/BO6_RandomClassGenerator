@@ -240,7 +240,6 @@
         ],
         "Underbarrel": [
             "Vertical Foregrip",
-            "",
             "Lightweight Foregrip",
             "Marksman Foregrip",
             "Precision Foregrip",
@@ -391,6 +390,94 @@
 	"TR2": {
 		"Level": [
 			"0"
-		]
+		],
+        "Optic": [
+            "Kepler Microflex",
+            "PrismaTech Reflex",
+            "Volzhskiy Reflex",
+            "Redwell Reflex",
+            "K&S Red Dot",
+            "Kepler Red Dot",
+            "Otero Red Dot",
+            "OM3 '92 Holo",
+            "Pinpoint Holoscout",
+            "Accu-Spot Ultra Holo",
+            "Jason Armory 2x",
+            "Willis 3x",
+            "PrismaTech 4x",
+            "Dobrych 4x",
+            "K&S Thermal Holo",
+            "Pinpoint Hybrid",
+            "PrismaPoint Hybrid",
+            "R&K Multizoom",
+            "Remuda Range Finder",
+            "Remuda Dual Zoom",
+            "VMF Variable Scope",
+            "Redwell Custom Zoom",
+            "Otero Thermal 2x",
+            "Thermal 6x",
+            ""
+        ],
+        "Muzzle": [
+            "Suppressor",
+            "Compensator",
+            "Muzzle Brake",
+            "Ported Compensator",
+            ""
+        ],
+        "Barrel": [
+            "Gain-Twist Barrel",
+            "Long Barrel",
+            "Reinforced Barrel",
+            "Short Barrel",
+            "CHF Barrel",
+            ""
+        ],
+        "Underbarrel": [
+            "Vertical Foregrip",
+            "Lightweight Foregrip",
+            "Marksman Foregrip",
+            "Precision Foregrip",
+            "Ranger Foregrip",
+            ""
+        ],
+        "Magazine": [
+            "Extended Mag I",
+            "Fast Mag I",
+            "Extended Mag II",
+            "Flip Mag",
+            ""
+        ],
+        "Rear Grip": [
+            "Quickdraw Grip",
+            "Assault Grip",
+            "Commando Grip",
+            "Ergonomic Grip",
+            "CQB Grip",
+            ""
+        ],
+        "Stock": [
+            "Light Stock",
+            "Infiltrator Stock",
+            "Heavy Stock",
+            "Balanced Stock",
+            "Combat Stock",
+            ""
+        ],
+        "Laser": [
+            "Steady Aim Laser",
+            "Fast Motion Laser",
+            "Tactical Laser",
+            "Strelok Laser",
+            "Target Laser",
+            ""
+        ],
+        "Fire Mod": [
+            "Rapid Fire",
+            "7.62 NATO Overpressured",
+            "Recoil Springs",
+            "7.62 NATO FMJ",
+            ""
+        ]
 	}
 }

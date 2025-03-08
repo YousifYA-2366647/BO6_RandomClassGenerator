@@ -32,16 +32,17 @@
 			"0"
 		],
 		"Barrel": [
-			""
+			"Long Barrel"
 		],
 		"Underbarrel": [
-			""
+			"Crossbar"
 		],
 		"Magazine": [
-			""
+			"Ricochet Blades",
+			"Explosive Blades"
 		],
 		"Stock": [
-			""
+			"Overclocked Stock"
 		]
 	}
 }
