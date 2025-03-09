@@ -52,10 +52,12 @@ button:active, #disclaimerButton:active {
 
 #description {
     color: white;
+    font-family: CODBO;
     font-size: 20px;
 }
 
 #buttonDiv {
+    margin-top: 300px;
     text-align: center;
     margin-top: 40px;
 }
