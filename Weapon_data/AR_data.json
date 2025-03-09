@@ -524,7 +524,6 @@
             "R&K Multizoom",
             "Blandwell 7x Scope",
             "Otero Thermal 2x",
-            "Crossbow",
             ""
         ],
         "Muzzle": [
@@ -552,6 +551,7 @@
             "Launcher-Smoke",
             "Launcher-High Explosive",
             "Launcher-Drill Charge",
+            "Crossbow",
             ""
         ],
         "Magazine": [
