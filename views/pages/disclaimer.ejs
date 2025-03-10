@@ -3,7 +3,7 @@
     <%- include('../partials/header', {title: 'Disclaimer'}) %>
 </head>
 <body>
-    <h1 id="homeButton" onclick="window.location = '/'">Home</h1>
+    <img id="homeButton" src="Resources/BlackOps6Logo.png">
     <p style="color: white;text-align: center;height: 100%;justify-content: center;align-items: center;">
         <strong style="font-size: 30px;">Disclaimer</strong><br>
         This random class generator is an unofficial fan-made project inspired by <em>Call of Duty: Black Ops 6</em>.<br>
@@ -14,4 +14,10 @@
         Massive thanks to youtuber "Destroyerfield51" (<a href="https://www.youtube.com/@Destroyerfield51">https://www.youtube.com/@Destroyerfield51</a>) for providing a video with every weapon and all of their attachments.<br>
         Link to the video: <a href="https://www.youtube.com/watch?v=Uan-P_FHai0">https://www.youtube.com/watch?v=Uan-P_FHai0</a>
     </p>
+
+    <script>
+        document.getElementById("homeButton").addEventListener('click', function() {
+            window.location.href = "/";
+        })
+    </script>
 </body>

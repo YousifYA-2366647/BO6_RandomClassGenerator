@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("curLevel").addEventListener('input', function() {
         document.getElementById("curLevelLabel").innerText = "Level: " + document.getElementById("curLevel").value;
     })
+
+    document.getElementById("homeButton").addEventListener('click', function() {
+        window.location.href = "/";
+    })
     
     document.getElementById("includeDLC").checked = true;
 })

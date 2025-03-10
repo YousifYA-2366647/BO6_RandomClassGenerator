@@ -44,26 +44,33 @@ button:active, #disclaimerButton:active {
     background-color: #222222;
 }
 
-#titleHeader {
+#homeButton {
+    width: 15%;
     text-align: center;
+}
+
+#titleHeader {
+    margin-top: 2%;
+    margin-left: 48%;
     color: white;
     font-size: 32px;
+    font-family: CODBO;
 }
 
 #description {
     color: white;
+    text-align: center;
     font-family: CODBO;
-    font-size: 20px;
+    font-size: 28px;
 }
 
 #buttonDiv {
-    margin-top: 300px;
+    margin-top: 2%;
     text-align: center;
-    margin-top: 40px;
 }
 
 #extras {
-    margin-top: 30px;
+    margin-top: 3%;
     text-align: center;
 }
 
@@ -80,7 +87,7 @@ button:active, #disclaimerButton:active {
     grid-template-columns: 1fr 1fr;
     column-gap: 20px;
     width: 20%;
-    margin: auto;
+    margin: 30vh auto auto auto;
 }
 
 #level, #DLC {
@@ -139,6 +146,7 @@ button:active, #disclaimerButton:active {
 
 .circles {
     color: orange;
+    font-size: 13px;
 }
 
 .weaponName {

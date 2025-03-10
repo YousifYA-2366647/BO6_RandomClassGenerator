@@ -348,6 +348,10 @@ secondaryCloseButton.onclick = function() {
     document.body.style.overflow = "auto";
 }
 
+document.getElementById("homeButton").addEventListener('click', function() {
+    window.location.href = "/";
+})
+
 window.onclick = function(event) {
     if (event.target === secondaryModal) {
         secondaryModal.style.display = "none";
