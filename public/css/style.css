@@ -220,19 +220,51 @@ background-color: rgba(50, 50, 50, 0.7);
 }
 
 
+/* General styling improvements */
+body {
+    background-color: #121212;
+    color: #f5f5f5;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../Resources/mainBackground.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+  
+/* Header/Logo styling */
+#homeButton {
+    display: block;
+    max-width: 300px;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+  
+#homeButton:hover {
+    transform: scale(1.05);
+}
+  
+/* Main container */
 #randomClassBody {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto auto;
-    row-gap: 20px;
+    row-gap: 30px;
     column-gap: 50px;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
 }
-
-/*weapons*/
+  
+/* Weapons section */
 #randomWeapons {
     display: grid;
     grid-template-rows: auto auto auto;
     column-gap: 10px;
+    row-gap: 15px;
     text-align: center;
     color: white;
     min-width: 100%;
@@ -241,64 +273,61 @@ background-color: rgba(50, 50, 50, 0.7);
     grid-column: 1 / 2;
     grid-row: 1 / 4;
 }
-
+  
 .weaponText {
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
 }
-
+  
 #primaryTitle, #secondaryTitle, #meleeTitle {
     margin-top: 0;
     margin-left: 0;
     max-width: 70px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
 }
-
+  
 .circles {
-    color: orange;
-    font-size: 13px;
+    color: #ff9d00;
+    font-size: 14px;
+    letter-spacing: 2px;
 }
-
+  
 .weaponName {
     font-size: 34px;
-    font-family: CODBO;
+    font-family: CODBO, 'Arial Black', sans-serif;
     margin: 0 auto 0 0;
     width: 100%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
-
+  
 #randomPrimary, #randomSecondary, #randomMelee {
     text-align: center;
     color: white;
     width: auto;
-    height: auto;
-    max-height: auto;
+    height: 250px;
+    max-height: 400px;
+    background-color: rgba(30, 30, 30, 0.7);
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: solid #ff9d00 4px;
 }
-
-#randomPrimary {
-    border-top: solid white 4px;
-    border-bottom: solid white 2px;
-    border-left: solid white 4px;
-    border-right: solid white 4px;
+  
+#randomPrimary:hover, #secondaryAttachmentButton:hover #randomSecondary {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
-
-#randomSecondary {
-    border-top: solid white 2px;
-    border-bottom: solid white 4px;
-    border-left: solid white 4px;
-    border-right: solid white 2px;
-}
-
-#randomMelee {
-    border-left: solid white 2px;
-    border-right: solid white 4px;
-    border-top: solid white 2px;
-    border-bottom: solid white 4px;
-}
-
+  
 .weaponImage {
-    height: 200px;
+    height: 210px;
     max-width: 100%;
+    padding: 15px 0;
+    filter: drop-shadow(2px 4px 6px black);
 }
-
+  
+/* Attachments */
 .attachements {
     color: white;
     display: flex;
@@ -308,99 +337,116 @@ background-color: rgba(50, 50, 50, 0.7);
     width: 100%;
     height: 100%;
 }
-
+  
 .attachement {
     text-align: center;
-    margin: 10px auto 10px auto;
+    margin: 10px auto;
     height: 98px;
     width: 350px;
     max-height: 100%;
-    border: solid white 1px;
+    border: solid #ff9d00 1px;
+    background-color: rgba(40, 40, 40, 0.8);
+    border-radius: 5px;
+    transition: transform 0.2s;
 }
-
-/*modals*/
+  
+.attachement:hover {
+    transform: scale(1.03);
+}
+  
+/* Modals */
 #primaryAttachmentButton, #secondaryAttachmentButton {
     text-decoration: none;
+    display: block;
 }
-
-#primaryAttachmentButton:hover #primaryAttachmentTooltip, #secondaryAttachmentButton:hover #secondaryAttachmentTooltip {
+  
+#primaryAttachmentButton:hover #primaryAttachmentTooltip, 
+#secondaryAttachmentButton:hover #secondaryAttachmentTooltip {
     cursor: pointer;
     visibility: visible;
     opacity: 1;
-    transition: 0.4s;
+    transform: translateY(0);
+    transition: all 0.3s ease;
 }
-
+  
 .attachmentTooltip {
     display: inline-block;
     position: absolute;
     visibility: hidden;
-    padding: 0 5px 0 5px;
+    padding: 8px 12px;
     opacity: 0;
     width: auto;
     height: auto;
     text-align: center;
-    background-color: #222222;
-    color: white;
+    background-color: #ff9d00;
+    color: #000;
     border-radius: 5px;
-    transform: translateY(-10px);
-    transition: 0.4s;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-
+  
 .attachmentModals {
     display: none;
     position: fixed;
     cursor: auto;
-    z-index: 1;
+    z-index: 10;
     left: 0;
     top: 0;
     width: 100%;
     height: 100vh;
     overflow: none;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(3px);
 }
-
+  
 .modalContent {
     display: flex;
     flex-direction: column;
-
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), 10%, #000000), url('../Resources/mainBackground.png');
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), 80%, #000000), url('../Resources/mainBackground.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 100% 100%;
-
-    border: 1px solid #888;
-    margin-left: 30%;
+    background-size: cover;
+    border: 2px solid #ff9d00;
+    border-radius: 10px;
+    margin-left: 25%;
     margin-top: 5%;
-    width: 40%;
-    height: 70%;
+    width: 50%;
+    height: 80%;
     overflow: auto;
-    z-index: 2;
+    z-index: 11;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
 }
-
+  
 .closeButton {
-    color: #aaa;
+    color: #fff;
     float: right;
     margin-right: 30%;
     margin-top: 3%;
-    font-size: 20px;
+    font-size: 16px;
     width: 100px;
     height: 5%;
-    border: none;
+    border: 2px solid #ff9d00;
+    background-color: #333;
     font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.2s;
+    text-transform: uppercase;
 }
-
-#closeButton:hover, #closeButton:focus {
-    color: black;
+  
+.closeButton:hover, .closeButton:focus {
+    background-color: #ff9d00;
+    color: #000;
     text-decoration: none;
     cursor: pointer;
 }
-
-/*equipment*/
+  
+/* Equipment */
 #randomEquipment {
     display: grid;
     grid-template-rows: auto auto auto;
-    row-gap: 5px;
+    row-gap: 15px;
     color: white;
     align-items: center;
     max-width: 100%;
@@ -408,35 +454,44 @@ background-color: rgba(50, 50, 50, 0.7);
     grid-column: 2 / 3;
     grid-row: 1 / 2;
 }
-
+  
 #lethalDivision, #tacticalDivision, #fieldUpgradeDivision {
     display: grid;
     grid-template-columns: 1fr 3fr;
     justify-content: space-between;
     align-items: center;
 }
-
+  
+#randomLethal, #randomFieldUpgrade, #randomTactical {
+    background-color: rgba(30, 30, 30, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+  
 #randomLethal, #randomFieldUpgrade {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
     max-height: 100%;
-    border: solid white 4px;
+    border: solid #ff9d00 3px;
 }
-
+  
 #randomTactical {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
     max-height: 100%;
-    border: solid white 4px;
+    border: solid #ff9d00 3px;
 }
-
+  
 .equipmentClassifier {
     font-weight: bold;
     margin-left: 15px;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #ff9d00;
 }
-
+  
 .grenadeDiv, .fieldDiv {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -444,31 +499,39 @@ background-color: rgba(50, 50, 50, 0.7);
     justify-content: left;
     width: 100%;
     height: 100%;
-    border-right: solid whitesmoke 2px;
+    border-right: solid #555 1px;
+    padding: 10px 0;
+    transition: background-color 0.2s;
 }
-
+  
+.grenadeDiv:hover, .fieldDiv:hover {
+    background-color: rgba(60, 60, 60, 0.7);
+}
+  
 .grenadeImage, .fieldImage {
-    height: 80px;
+    height: 70px;
     width: auto;
     object-fit: cover;
+    margin-left: 5px;
     max-width: 100%;
     max-height: 100%;
     border-radius: 5px;
-    z-index: -1;
+    filter: drop-shadow(2px 2px 3px black);
 }
-
+  
 .equipment {
     color: white;
     font-size: 18px;
-    font-family: CODBO;
+    font-family: CODBO, 'Arial Black', sans-serif;
     margin: auto;
     width: 100%;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
-
-/*perks*/
+  
+/* Perks */
 #randomPerks {
     display: grid;
-    row-gap: 5px;
+    row-gap: 15px;
     color: white;
     height: auto;
     width: 100%;
@@ -477,22 +540,32 @@ background-color: rgba(50, 50, 50, 0.7);
     grid-column: 2 / 3;
     grid-row: 2 / 3;
 }
-
+  
 .perkDiv {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 70px;
     width: 100%;
-    border: solid white 4px;
+    border: solid #ff9d00 3px;
     align-items: center;
+    background-color: rgba(30, 30, 30, 0.7);
+    border-radius: 8px;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-
+  
+.perkDiv:hover {
+    transform: translateX(5px);
+    background-color: rgba(60, 60, 60, 0.7);
+}
+  
 .perkDivision {
     display: grid;
     grid-template-columns: 1fr 3fr;
     align-items: center;
+    margin-bottom: 10px;
 }
-
+  
 .perkClassifier {
     display: flex;
     align-items: flex-start;
@@ -503,27 +576,31 @@ background-color: rgba(50, 50, 50, 0.7);
     max-width: 70px;
     min-width: 50px;
     margin-left: 15px;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #ff9d00;
 }
-
+  
 .perkImage {
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
     object-fit: cover;
     max-width: 100%;
     border-radius: 5px;
+    filter: drop-shadow(1px 1px 2px black);
 }
-
+  
 .perk {
     color: white;
     font-size: 20px;
-    font-family: CODBO;
+    font-family: CODBO, 'Arial Black', sans-serif;
     width: 100%;
     max-width: 100%;
     max-height: 100%;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
-
-/*wildcard*/
-
+  
+/* Wildcard */
 #wildcardDivision {
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -534,7 +611,7 @@ background-color: rgba(50, 50, 50, 0.7);
     width: 100%;
     max-height: 100%;
 }
-
+  
 #randomWildcard {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -542,44 +619,59 @@ background-color: rgba(50, 50, 50, 0.7);
     height: 150px;
     align-items: center;
     justify-content: center;
-    border: solid white 4px;
+    border: solid #ff9d00 3px;
+    background-color: rgba(30, 30, 30, 0.7);
+    border-radius: 8px;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-
+  
+#randomWildcard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+  
 #wildcardClassifier {
     font-weight: bold;
-    color: white;
+    color: #ff9d00;
     margin-left: 15px;
+    text-transform: uppercase;
+    font-size: 14px;
 }
-
+  
 .wildcardImage {
-    height: 95%;
+    height: 99%;
     width: auto;
-    height: 150px;
     border-radius: 5px;
 }
-
+  
 .wildcardText {
     color: white;
-    font-size: 20px;
-    font-family: CODBO;
+    font-size: 24px;
+    margin: auto;
+    font-family: CODBO, 'Arial Black', sans-serif;
     width: 100%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
-
-/*scorestreaks*/
+  
+/* Scorestreaks */
 #randomScorestreaks {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     color: white;
     align-items: center;
-    margin-top: 20px;
-    height: 130px;
+    margin-top: 30px;
+    height: 140px;
     width: 100%;
     max-height: 100%;
-    border: solid white 4px;
+    border: solid #ff9d00 3px;
     grid-column: 1 / 3;
     grid-row: 4 / 5;
+    background-color: rgba(30, 30, 30, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-
+  
 .scorestreakDiv {
     display: flex;
     flex-direction: column;
@@ -588,39 +680,105 @@ background-color: rgba(50, 50, 50, 0.7);
     height: 100%;
     max-height: 100%;
     width: 100%;
-    border-right: solid white 2px;
+    border-right: solid #555 1px;
+    transition: background-color 0.2s;
 }
-
+  
+.scorestreakDiv:hover {
+    background-color: rgba(60, 60, 60, 0.7);
+}
+  
 .scorestreakImage {
-    height: 100px;
+    height: 90px;
     width: auto;
     object-fit: cover;
     max-width: 100%;
     max-height: 100%;
     border-radius: 5px;
+    filter: drop-shadow(2px 2px 4px black);
 }
-
+  
 .scorestreak {
     color: white;
     text-align: center;
-    font-size: 20px;
-    font-family: CODBO;
-    margin: 0;
+    font-size: 18px;
+    font-family: CODBO, 'Arial Black', sans-serif;
+    margin: 5px 0 0 0;
     width: 100%;
     max-width: 100%;
     max-height: 100%;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
-
+  
+/* Generate Button */
 #regenerateButton {
-    width: 200px;
+    width: 250px;
     height: 70px;
-    margin: 10px auto;
-    background-color: #444;
-    color: white;
-}
-
-#regenerateButton:hover {
-    background-color: #888;
+    margin: 30px auto;
+    background-color: #ff9d00;
     color: black;
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+    display: block;
+    font-family: CODBO, 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+  
+#regenerateButton:hover {
+    background-color: #ffffff;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 157, 0, 0.5);
+}
+  
+/* Additional responsive styles */
+@media (max-width: 1200px) {
+    #randomClassBody {
+      width: 90%;
+    }
+}
+  
+@media (max-width: 768px) {
+    #randomClassBody {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    
+    #randomWeapons {
+      grid-column: 1 / 2;
+      grid-row: auto;
+    }
+    
+    #randomEquipment {
+      grid-column: 1 / 2;
+      grid-row: auto;
+    }
+    
+    #randomPerks {
+      grid-column: 1 / 2;
+      grid-row: auto;
+    }
+    
+    #wildcardDivision {
+      grid-column: 1 / 2;
+      grid-row: auto;
+    }
+    
+    #randomScorestreaks {
+      grid-column: 1 / 2;
+      grid-row: auto;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      height: auto;
+    }
+    
+    .modalContent {
+      margin-left: 10%;
+      width: 80%;
+    }
 }
