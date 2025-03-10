@@ -31,12 +31,12 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-#homeButton {
+#homeButtonHome {
     width: 120px;
     transition: transform 0.3s ease;
 }
 
-#homeButton:hover {
+#homeButtonHome:hover {
     cursor: pointer;
     transform: scale(1.05);
     filter: brightness(1.2);
