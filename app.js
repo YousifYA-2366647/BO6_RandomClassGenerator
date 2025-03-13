@@ -63,7 +63,7 @@ app.get("/getWeapons", async (request, response) => {
   secondaryWeapons.forEach(value => Object.assign(secondaries, value));
 
   let curLevel = getCookies(request, 'curLevel');
-  let includeDLC = getCookies(request, 'includeDLC');
+  let includeDLC = (getCookies(request, 'includeDLC').toLowerCase() === "true");
   if (curLevel == "") {
     curLevel = 1;
   }

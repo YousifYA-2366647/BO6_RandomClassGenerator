@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
         document.cookie = "includeDLC=" + document.getElementById("includeDLC").checked + "; path=/";
         window.location.href = "/generateClass";
     })
+
+    
+    document.getElementById("includeDLC").addEventListener("change", function() {
+        console.log(document.getElementById("includeDLC").checked);
+    })
     
     document.getElementById("disclaimerButton").addEventListener('click', function() {
         window.location.href = "/disclaimer";
