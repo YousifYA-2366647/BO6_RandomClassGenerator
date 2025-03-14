@@ -1,9 +1,13 @@
+// JsonHandler will be responsible for chosing random objects from Json objects.
 export class JsonHandler {
     
     JsonHandler() {
         
     }
 
+    // filterItems is used to apply the settings the user chose on the Json objects.
+    // if the user's level is lower than any object in the Json, then it will be removed.
+    // if the user excluded DLC weapons, then they won't be added. DLC weapons are marked in the json files by a 'Level: 0'.
     filterItems(JsonObject, curLevel, includeDLC) {
         let filteredJson = {};
 
@@ -23,6 +27,7 @@ export class JsonHandler {
         return filteredJson;
     }
   
+    // getRandomItemsFromJSON filters the given Json object and returns a random entry from it.
     getRandomItemsFromJSON(JsonObject, curLevel, includeDLC) {
         if (Object.keys(JsonObject).length == 0) {
             return {};
@@ -39,6 +44,9 @@ export class JsonHandler {
         return randomJson;
     }
   
+    // getRandomAttachments gets a Json object that represents a weapon, and choses random attachments for it.
+    // the amount of attachments chosen is equal to the parameter 'amount'.
+    // once enough attachments have been chosen, this function will make all other attachments empty.
     getRandomAttachments(weaponJson, amount) {
         let weaponName = Object.keys(weaponJson)[0];
         let attachments = weaponJson[weaponName];
@@ -68,7 +76,8 @@ export class JsonHandler {
         return weaponJson;
     }
   
-  
+    // addSpecialPerk adds a specialty perk to the class.
+    // this specialty perk is given if the class has at least three perks of the same color.
     addSpecialPerk(perks, enforcer, recon, specialist) {
         let amountOfE = 0;
         let amountOfR = 0;

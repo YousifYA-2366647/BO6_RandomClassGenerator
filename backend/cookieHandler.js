@@ -1,3 +1,4 @@
+// returns the given cookie from a request.
 export function getCookies(req, cookieName) {
     const cookies = req.headers.cookie;
     if (!cookies) return "";
