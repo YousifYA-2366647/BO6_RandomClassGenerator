@@ -135,6 +135,7 @@ app.get("/getWeapons", async (request, response) => {
   let amountOfFieldUpgrades = (randomWildcard == "Prepper") ? 2: 1;
   let randomFieldUpgrades = [Object.keys(jsonHandler.getRandomItemsFromJSON({...fieldUpgrades}, curLevel, includeDLC))[0]];
   if (amountOfFieldUpgrades == 2) {
+    delete fieldUpgrades[Object.keys(randomFieldUpgrades)[0]]
     randomFieldUpgrades = [...randomFieldUpgrades, Object.keys(jsonHandler.getRandomItemsFromJSON({...fieldUpgrades}, curLevel, includeDLC))[0]];
   }
 
