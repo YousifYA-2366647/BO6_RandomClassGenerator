@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById("curLevelLabel").innerText = "Level: " + document.getElementById("curLevel").value;
     })
 
-    document.getElementById("homeButton").addEventListener('click', function() {
+    document.getElementById("homeButtonHome").addEventListener('click', function() {
         window.location.href = "/";
     })
     
