@@ -1,3 +1,4 @@
+// returns the path to the requested image of a weapon or an attachment of that weapon.
 function getWeaponImagePath(weaponName, attachmentType, attachmentName) {
     fullPath = "Resources/Weapons/" + weaponName; 
     if (attachmentType != null) {
@@ -17,30 +18,36 @@ function getWeaponImagePath(weaponName, attachmentType, attachmentName) {
     return fullPath + ".png";
 }
 
+// returns the path to the requested image of a perk.
 function getPerkImagePath(perkName) {
     let fullPath = "Resources/Perks/";
     let noSymbolsPerkName = perkName.replace(/\W/g, '');
     return fullPath + noSymbolsPerkName + ".png";
 }
 
+// returns the path to the requested image of a scorestreak.
 function getScorestreakImagePath(scorestreakName) {
     let fullPath = "Resources/Scorestreaks/";
     let noSymbolsScorestreakName = scorestreakName.replace(/\W/g, '');
     return fullPath + noSymbolsScorestreakName + ".png";
 }
 
+// returns the path to the requested image of a wildcard.
 function getWildcardImagePath(wildcardName) {
     let fullPath = "Resources/Wildcards/";
     let noSymbolsWildcardName = wildcardName.replace(/\W/g, '');
     return fullPath + noSymbolsWildcardName + ".png";
 }
 
+// returns the path to the requested image of an equipment.
 function getEquipmentImagePath(equipmentName) {
     let fullPath = "Resources/Equipment/";
     let noSymbolsEquipmentName = equipmentName.replace(/\W/g, '');
     return fullPath + noSymbolsEquipmentName + ".png";
 }
 
+// creates the image and text for the primary weapon.
+// also creates the image and text for the attachments modal of the primary weapon.
 function setupPrimary(jsonObject) {
     let primaryAttachements = document.getElementById("primaryAttachments");
     document.getElementById("primaryAttachmentsAmount").innerHTML = '';
@@ -83,6 +90,8 @@ function setupPrimary(jsonObject) {
     }
 }
 
+// creates the image and text for the secondary weapon.
+// also creates the image and text for the attachments modal of the secondary weapon.
 function setupSecondary(jsonObject) {
     let secondaryAttachements = document.getElementById("secondaryAttachments");
     document.getElementById("secondaryAttachmentsAmount").innerHTML = '';
@@ -119,6 +128,7 @@ function setupSecondary(jsonObject) {
     }
 }
 
+// creates the images and text of the equipment.
 function setupEquipment(lethalJsonObject, tacticalJsonObject, fieldJsonObject) {
     let lethalDiv = document.getElementById("randomLethal");
     let tacticalDiv = document.getElementById("randomTactical");
@@ -203,6 +213,7 @@ function setupEquipment(lethalJsonObject, tacticalJsonObject, fieldJsonObject) {
     }
 }
 
+// creates the images and text of the perks.
 function setupPerks(perkJsonObject) {
     let index = 1;
     for (const key in perkJsonObject) {
@@ -232,6 +243,7 @@ function setupPerks(perkJsonObject) {
     }
 }
 
+// creates the image and text of the wildcard.
 function setupWildcard(wildcard) {
     let randomWildcard = document.getElementById("randomWildcard");
     randomWildcard.innerHTML = '';
@@ -257,6 +269,7 @@ function setupWildcard(wildcard) {
     randomWildcard.appendChild(wildcardText);
 }
 
+// creates the images and text of the scorestreaks.
 function setupScorestreaks(scorestreakJsonObject) {
     let scorestreakDiv = document.getElementById("randomScorestreaks");
     scorestreakDiv.innerHTML = '';
@@ -280,6 +293,7 @@ function setupScorestreaks(scorestreakJsonObject) {
     }
 }
 
+// requests the random class and sets up the images and text to display it.
 function getRandomWeapons() {
     fetch("/getWeapons", {
         method: "GET"
@@ -310,10 +324,13 @@ function getRandomWeapons() {
     })
 }
 
+// once the document is loaded, a random class should be requested.
 document.addEventListener("DOMContentLoaded", getRandomWeapons);
 
+// when the 'generate' button is pressed, a random class should be requested.
 document.getElementById("regenerateButton").addEventListener('click', getRandomWeapons);
 
+// code to make the attachments modals appear when the weapon image is clicked.
 var modal = document.getElementById("primaryAttachmentModal");
 var button = document.getElementById("primaryAttachmentButton");
 var closeButton = document.getElementById("closeButton");
