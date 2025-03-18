@@ -22,7 +22,9 @@ body {
 
 /* Header Styles */
 #headers {
+    position: relative;
     display: flex;
+    justify-content: center;
     align-items: center;
     padding: 20px;
     width: 100%;
@@ -32,7 +34,10 @@ body {
 }
 
 #homeButtonHome {
-    width: 120px;
+    position: absolute;
+    left: 20px;
+    height: 60px;
+    width: 110px;
     transition: transform 0.3s ease;
 }
 
@@ -47,10 +52,10 @@ body {
     font-size: 38px;
     font-family: CODBO, 'Segoe UI', Tahoma, sans-serif;
     text-transform: uppercase;
-    margin-left: 40%;
+    width: 100%;
+    text-align: center;
     letter-spacing: 2px;
     text-shadow: 2px 2px 5px rgba(255, 165, 0, 0.7), 0 0 10px rgba(255, 165, 0, 0.4);
-    text-align: center;
 }
 
 /* Description */
@@ -236,7 +241,8 @@ body {
 /* Header/Logo styling */
 #homeButton {
     display: block;
-    max-width: 300px;
+    height: 60px;
+    width: 110px;
     margin: 20px auto;
     cursor: pointer;
     transition: transform 0.3s ease;
@@ -458,6 +464,7 @@ body {
 #lethalDivision, #tacticalDivision, #fieldUpgradeDivision {
     display: grid;
     grid-template-columns: 1fr 3fr;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
 }
@@ -494,38 +501,43 @@ body {
   
 .grenadeDiv, .fieldDiv {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 1fr;
     align-items: center;
-    justify-content: left;
+    column-gap: 5px;
     width: 100%;
     height: 100%;
     border-right: solid #555 1px;
-    padding: 10px 0;
+    padding: 0;
     transition: background-color 0.2s;
 }
   
 .grenadeDiv:hover, .fieldDiv:hover {
     background-color: rgba(60, 60, 60, 0.7);
 }
-  
+
 .grenadeImage, .fieldImage {
     height: 70px;
     width: auto;
-    object-fit: cover;
-    margin-left: 5px;
+    object-fit: fill;
     max-width: 100%;
-    max-height: 100%;
+    max-height: 97%;
     border-radius: 5px;
-    filter: drop-shadow(2px 2px 3px black);
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    justify-self: start;
 }
-  
+
 .equipment {
     color: white;
     font-size: 18px;
     font-family: CODBO, 'Arial Black', sans-serif;
-    margin: auto;
+    margin: 0;
+    padding-right: 10px;
     width: 100%;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    justify-self: start;
+    text-align: left;
 }
   
 /* Perks */
@@ -741,6 +753,63 @@ body {
     #randomClassBody {
       width: 90%;
     }
+
+    .equipmentClassifier, #wildcardClassifier, .perkClassifier {
+        display: none;
+    }
+
+    .perkDiv,
+    #randomFieldUpgrade,
+    #randomLethal, 
+    #randomTactical,
+    #randomWildcard {
+        width: 100%;
+    }
+    
+    .perkDivision {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .perkDivision .perkDiv {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    #lethalDivision, 
+    #tacticalDivision, 
+    #fieldUpgradeDivision,
+    #wildcardDivision {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    #randomLethal,
+    #randomTactical,
+    #randomFieldUpgrade {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    #randomWildcard {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .grenadeDiv, .fieldDiv {
+        width: 100%;
+        border-right: none;
+        border-bottom: solid #555 1px;
+    }
+    
+    .grenadeDiv:last-child, .fieldDiv:last-child {
+        border-bottom: none;
+    }
 }
   
 @media (max-width: 768px) {
@@ -780,5 +849,68 @@ body {
     .modalContent {
       margin-left: 10%;
       width: 80%;
+    }
+
+    .equipmentClassifier, #wildcardClassifier, .perkClassifier {
+        display: none;
+    }
+
+    .perkDiv,
+    #randomFieldUpgrade,
+    #randomLethal, 
+    #randomTactical,
+    #randomWildcard {
+        width: 100%;
+    }
+    
+    .perkDivision {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .perkDivision .perkDiv {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    #lethalDivision, 
+    #tacticalDivision, 
+    #fieldUpgradeDivision,
+    #wildcardDivision {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    #randomLethal,
+    #randomTactical,
+    #randomFieldUpgrade {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    #randomWildcard {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .grenadeDiv, .fieldDiv {
+        width: 100%;
+        border-right: none;
+        border-bottom: solid #555 1px;
+    }
+    
+    .grenadeDiv:last-child, .fieldDiv:last-child {
+        border-bottom: none;
+    }
+
+    .equipment {
+        text-align: center;
+        padding-right: 0;
+        justify-self: center;
     }
 }

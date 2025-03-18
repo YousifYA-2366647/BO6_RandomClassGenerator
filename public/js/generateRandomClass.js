@@ -144,6 +144,7 @@ function setupEquipment(lethalJsonObject, tacticalJsonObject, fieldJsonObject) {
         let image = document.createElement('img');
         image.className = 'grenadeImage';
         image.src = getEquipmentImagePath(lethalJsonObject[key]);
+        image.alt = lethalJsonObject[key];
 
         let paragraph = document.createElement('p');
         paragraph.className = "equipment";
@@ -162,6 +163,7 @@ function setupEquipment(lethalJsonObject, tacticalJsonObject, fieldJsonObject) {
         let image = document.createElement('img');
         image.className = 'grenadeImage';
         image.src = getEquipmentImagePath(tacticalJsonObject[key]);
+        image.alt = tacticalJsonObject[key];
 
         let paragraph = document.createElement('p');
         paragraph.className = "equipment";
@@ -180,6 +182,7 @@ function setupEquipment(lethalJsonObject, tacticalJsonObject, fieldJsonObject) {
         let image = document.createElement('img');
         image.className = 'fieldImage';
         image.src = getEquipmentImagePath(fieldJsonObject[key]);
+        image.alt = fieldJsonObject[key];
 
         let paragraph = document.createElement('p');
         paragraph.className = "equipment";
@@ -231,6 +234,7 @@ function setupPerks(perkJsonObject) {
         let image = document.createElement('img');
         image.className = "perkImage";
         image.src = getPerkImagePath(perkJsonObject[key]);
+        image.alt = perkJsonObject[key];
 
         let paragraph = document.createElement('p');
         paragraph.className = 'perk';
@@ -252,6 +256,7 @@ function setupWildcard(wildcard) {
         let wildcardImage = document.createElement('img');
         wildcardImage.className = "wildcardImage";
         wildcardImage.src = getWildcardImagePath(wildcard);
+        wildcardImage.alt = wildcard;
 
         randomWildcard.appendChild(wildcardImage);
     }
@@ -281,6 +286,7 @@ function setupScorestreaks(scorestreakJsonObject) {
         let image = document.createElement('img');
         image.className = "scorestreakImage";
         image.src = getScorestreakImagePath(scorestreakJsonObject[key]);
+        image.alt = scorestreakJsonObject[key];
 
         let paragraph = document.createElement('p');
         paragraph.className = 'scorestreak';
