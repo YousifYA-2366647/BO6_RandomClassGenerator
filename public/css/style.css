@@ -13,10 +13,11 @@ body {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), 30%, rgba(0, 0, 0, 0.9)), url('../Resources/mainBackground.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: contain;
+    background-position: center;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-width: 100%;
     color: white;
 }
 
@@ -414,6 +415,7 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    background-position: center;
     border: 2px solid #ff9d00;
     border-radius: 10px;
     margin-left: 25%;
