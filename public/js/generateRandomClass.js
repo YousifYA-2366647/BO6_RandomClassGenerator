@@ -57,7 +57,6 @@ function setupPrimary(jsonObject) {
 
 
     let chosenAttachements = Object.values(jsonObject)[0];
-    console.log(JSON.stringify(chosenAttachements));
     for (const key in chosenAttachements) {
         if (!chosenAttachements[key]) {
             document.getElementById("primaryAttachmentsAmount").innerHTML += "&#x25CB;"
@@ -311,8 +310,6 @@ function getRandomWeapons() {
         return res.json();
     })
     .then(res => {
-        console.log(JSON.stringify(res));
-
         setupPrimary(res.primary);
 
         setupSecondary(res.secondary);
@@ -330,11 +327,24 @@ function getRandomWeapons() {
     })
 }
 
+let timer = (new Date()).getTime();
+
 // once the document is loaded, a random class should be requested.
-document.addEventListener("DOMContentLoaded", getRandomWeapons);
+document.addEventListener("DOMContentLoaded", function () {
+    getRandomWeapons();
+    timer = (new Date()).getTime();
+});
 
 // when the 'generate' button is pressed, a random class should be requested.
-document.getElementById("regenerateButton").addEventListener('click', getRandomWeapons);
+document.getElementById("regenerateButton").addEventListener('click', function () {
+    if ((new Date()).getTime() - timer >= 1000) {
+        getRandomWeapons();
+        timer = (new Date()).getTime();
+    }
+    else {
+        return;
+    }
+});
 
 // code to make the attachments modals appear when the weapon image is clicked.
 var modal = document.getElementById("primaryAttachmentModal");

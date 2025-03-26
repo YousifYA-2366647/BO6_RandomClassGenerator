@@ -2,6 +2,7 @@ import { getCookies } from "./backend/cookieHandler.js";
 import { JsonParser } from "./backend/JsonParser.js";
 import { JsonHandler } from "./backend/JsonHandler.js";
 import express from "express";
+import fs from "fs";
 
 const app = express();
 const APP_PORT = 8080;
@@ -167,11 +168,34 @@ app.get("/getWeapons", async (request, response) => {
 
 app.get("/disclaimer", (request, response) => {
   response.render("pages/disclaimer");
+});
+
+app.use((req, res, next) => {
+  if (req.url.match(/\.(jpg|jpeg|png|gif|webp|svg)$/)) {
+    const filePath = "./public" + req.url.replaceAll("%20", " ");
+    console.log(filePath);
+
+    fs.access(filePath, fs.constants.F_OK, (err) => {
+      if (err) {
+        const errorMessage = `[${new Date().toISOString()}] Missing image: ${filePath}\n`;
+        fs.appendFile("./error.log", errorMessage, (err) => {
+            if (err) console.error('Failed to log missing image:', err);
+        });
+  
+        res.status(404).send('Image not found');
+      }
+    });
+    
+    next();
+  }
+  else {
+      next();
+  }
 })
 
+app.use(express.static("public"));
 
-
-app.use(express.static("public"));// Middleware for unknown routes
+// Middleware for unknown routes
 // Must be last in pipeline
 app.use((request, response, next) => {
   response.status(404).send("Sorry can't find that!");
