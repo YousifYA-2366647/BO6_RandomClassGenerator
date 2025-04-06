@@ -35,6 +35,7 @@
             "Compensator",
             "Muzzle Brake",
             "Ported Compensator",
+			"Monolithic Suppressor",
             ""
         ],
         "Barrel": [
@@ -137,6 +138,7 @@
             "Compensator",
             "Muzzle Brake",
             "Ported Compensator",
+			"Monolithic Suppressor",
             ""
         ],
         "Barrel": [
@@ -237,6 +239,7 @@
             "Compensator",
             "Muzzle Brake",
             "Ported Compensator",
+			"Monolithic Suppressor",
             ""
         ],
         "Barrel": [
@@ -335,6 +338,7 @@
             "Compensator",
             "Muzzle Brake",
             "Ported Compensator",
+			"Monolithic Suppressor",
             ""
         ],
         "Barrel": [
@@ -433,6 +437,7 @@
             "Compensator",
             "Muzzle Brake",
             "Ported Compensator",
+			"Monolithic Suppressor",
             ""
         ],
         "Barrel": [
@@ -531,6 +536,7 @@
             "Compensator",
             "Muzzle Brake",
             "Ported Compensator",
+			"Monolithic Suppressor",
             ""
         ],
         "Barrel": [
@@ -723,6 +729,7 @@
             "Compensator",
             "Muzzle Brake",
             "Ported Compensator",
+			"Monolithic Suppressor",
             ""
         ],
         "Barrel": [
@@ -823,6 +830,7 @@
             "Compensator",
             "Muzzle Brake",
             "Ported Compensator",
+			"Monolithic Suppressor",
             ""
         ],
         "Barrel": [
@@ -1064,7 +1072,7 @@
             ""
         ],
         "Stock": [
-            "No Stock",
+            "Light Stock",
             "Infiltrator Stock",
             "Heavy Stock",
             "Balanced Stock",
@@ -1080,10 +1088,10 @@
             ""
         ],
         "Fire Mod": [
-            "5.56 NATO Overpressured",
+            "7.62x39mm Overpressured",
             "Rapid Fire",
             "Recoil Springs",
-            "5.56 NATO FMJ",
+            "7.62x39mm FMJ",
             ""
         ]
 	}

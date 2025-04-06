@@ -28,6 +28,7 @@
             "Full Choke",
             "Modified Choke",
             "Muzzle Brake",
+			"Monolithic Suppressor",
             ""
         ],
         "Barrel": [
@@ -99,6 +100,7 @@
             "Full Choke",
             "Modified Choke",
             "Muzzle Brake",
+			"Monolithic Suppressor",
             ""
         ],
         "Barrel": [

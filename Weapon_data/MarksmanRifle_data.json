@@ -35,6 +35,7 @@
             "Compensator",
             "Muzzle Brake",
             "Ported Compensator",
+			"Monolithic Suppressor",
             ""
         ],
         "Barrel": [
@@ -95,6 +96,7 @@
             "5.56 NATO Overpressured",
             "Recoil Springs",
             "5.56 NATO FMJ",
+			"SWAT 5.56 Grau Conversion",
             ""
         ]
     },
@@ -135,6 +137,7 @@
             "Compensator",
             "Muzzle Brake",
             "Ported Compensator",
+			"Monolithic Suppressor",
             ""
         ],
         "Barrel": [
@@ -228,6 +231,7 @@
             "Compensator",
             "Muzzle Brake",
             "Ported Compensator",
+			"Monolithic Suppressor",
             ""
         ],
         "Barrel": [
@@ -328,6 +332,7 @@
             "Compensator",
             "Muzzle Brake",
             "Ported Compensator",
+			"Monolithic Suppressor",
             ""
         ],
         "Barrel": [
@@ -423,6 +428,7 @@
             "Compensator",
             "Muzzle Brake",
             "Ported Compensator",
+			"Monolithic Suppressor",
             ""
         ],
         "Barrel": [

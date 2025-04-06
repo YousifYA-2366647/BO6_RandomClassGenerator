@@ -33,6 +33,7 @@
             "Compensator",
             "Muzzle Brake",
             "Ported Compensator",
+			"Monolithic Suppressor",
             ""
         ],
         "Barrel": [
@@ -54,7 +55,7 @@
         "Magazine": [
             "Extended Mag I",
             "Fast Mag I",
-            " Extended Mag II",
+            "Extended Mag II",
             ""
         ],
         "Comb": [
@@ -122,6 +123,7 @@
             "Compensator",
             "Muzzle Brake",
             "Ported Compensator",
+			"Monolithic Suppressor",
             ""
         ],
         "Barrel": [
@@ -143,7 +145,7 @@
         "Magazine": [
             "Extended Mag I",
             "Fast Mag I",
-            " Extended Mag II",
+            "Extended Mag II",
             "Fast Mag II",
             ""
         ],
@@ -213,6 +215,7 @@
             "Compensator",
             "Muzzle Brake",
             "Ported Compensator",
+			"Monolithic Suppressor",
             ""
         ],
         "Barrel": [
@@ -234,7 +237,7 @@
         "Magazine": [
             "Extended Mag I",
             "Fast Mag I",
-            " Extended Mag II",
+            "Extended Mag II",
             "Fast Mag II",
             ""
         ],
@@ -303,6 +306,7 @@
             "Compensator",
             "Muzzle Brake",
             "Ported Compensator",
+			"Monolithic Suppressor",
             ""
         ],
         "Barrel": [
@@ -324,7 +328,7 @@
         "Magazine": [
             "Extended Mag I",
             "Fast Mag I",
-            " Extended Mag II",
+            "Extended Mag II",
             "Fast Mag II",
             ""
         ],
@@ -357,6 +361,97 @@
             ".50 BMG Overpressured",
             ".50 BMG FMJ",
             "Recoil Springs",
+			""
+        ]
+    },
+    "HDR": {
+        "Level": [
+            "0"
+        ],
+        "Optic": [
+            "Iron Sight",
+            "Kepler Microflex",
+            "PrismaTech Reflex",
+            "Redwell Reflex",
+            "K&S Red Dot",
+            "Kepler Red Dot",
+            "OM3 '92 Holo",
+            "Accu-Spot Ultra Holo",
+            "Willis 3x",
+            "PrismaTech 4x",
+            "Dobrych 4x",
+            "K&S Thermal Holo",
+            "Pinpoint Hybrid",
+            "PrismaPoint Hybrid",
+            "R&K Multizoom",
+            "Remuda Range Finder",
+            "Blandwell 7x Scope",
+            "Remuda Dual Zoom",
+            "VMF Variable Scope",
+            "Redwell Custom Zoom",
+            "Otero Thermal 2x",
+            "Thermal 6x",
+			""
+        ],
+        "Muzzle": [
+            "Suppressor",
+            "Compensator",
+            "Muzzle Brake",
+            "Ported Compensator",
+			"Monolithic Suppressor",
+            ""
+        ],
+        "Barrel": [
+            "Gain-Twist Barrel",
+            "Long Barrel",
+            "Reinforced Barrel",
+            "Short Barrel",
+            "CHF Barrel",
+            ""
+        ],
+        "Underbarrel": [
+            "Vertical Foregrip",
+			"Lightweight Bipod",
+            "Marksman Bipod",
+            "Precision Foregrip",
+            "Ranger Foregrip",
+            ""
+        ],
+        "Magazine": [
+            "Extended Mag I",
+            "Fast Mag I",
+            "Extended Mag II",
+            "Fast Mag II",
+            ""
+        ],
+        "Rear Grip": [
+            "Quickdraw Grip",
+            "Assault Grip",
+            "Commando Grip",
+            "Ergonomic Grip",
+            "CQB Grip",
+            ""
+        ],
+        "Stock": [
+            "Light Stock",
+            "Infiltrator Stock",
+            "Heavy Stock",
+            "Balanced Stock",
+            "Combat Stock",
+            ""
+        ],
+        "Laser": [
+            "Steady Aim Laser",
+            "Fast Motion Laser",
+            "Tactical Laser",
+            "Strelok Laser",
+            "Target Laser",
+            ""
+        ],
+        "Fire Mod": [
+            "Rapid Fire",
+            "108mm Overpressured",
+            "108mm FMJ",
 			""
         ]
     }
