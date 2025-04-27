@@ -34,6 +34,16 @@
             "24"
         ]
     },
+    "LDBR": {
+        "Level": [
+            "21"
+        ]
+    },
+	"Death Machine": {
+		"Level": [
+			"0"
+		]
+	},
     "Napalm Strike": {
         "Level": [
             "30"
@@ -42,11 +52,6 @@
     "Hand Cannon": {
         "Level": [
             "0"
-        ]
-    },
-    "LDBR": {
-        "Level": [
-            "21"
         ]
     },
     "Sentry Turret": {
@@ -59,14 +64,19 @@
             "1"
         ]
     },
+    "Interceptors": {
+        "Level": [
+            "47"
+        ]
+    },
     "Watchdog Helo": {
         "Level": [
             "1"
         ]
     },
-    "A.G.R MK1": {
+    "Strategic Bomber": {
         "Level": [
-            "27"
+            "36"
         ]
     },
 	"War Machine": {
@@ -74,14 +84,9 @@
 			"0"
 		]
 	},
-    "Interceptors": {
+    "A.G.R MK1": {
         "Level": [
-            "47"
-        ]
-    },
-    "Strategic Bomber": {
-        "Level": [
-            "36"
+            "27"
         ]
     },
     "H.A.R.P.": {

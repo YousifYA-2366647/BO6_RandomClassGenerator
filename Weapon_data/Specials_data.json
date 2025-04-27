@@ -44,5 +44,10 @@
 		"Stock": [
 			"Overclocked Stock"
 		]
+	},
+	"Nail Gun": {
+		"Level": [
+			"0"
+		]
 	}
 }
