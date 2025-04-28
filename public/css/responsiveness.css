@@ -1,0 +1,166 @@
+/* Additional responsive styles */
+@media (max-width: 1200px) {
+    #randomClassBody {
+      width: 90%;
+    }
+
+    .equipmentClassifier, #wildcardClassifier, .perkClassifier {
+        display: none;
+    }
+
+    .perkDiv,
+    #randomFieldUpgrade,
+    #randomLethal, 
+    #randomTactical,
+    #randomWildcard {
+        width: 100%;
+    }
+    
+    .perkDivision {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .perkDivision .perkDiv {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    #lethalDivision, 
+    #tacticalDivision, 
+    #fieldUpgradeDivision,
+    #wildcardDivision {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    #randomLethal,
+    #randomTactical,
+    #randomFieldUpgrade {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    #randomWildcard {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .grenadeDiv, .fieldDiv {
+        width: 100%;
+        border-right: none;
+        border-bottom: solid #555 1px;
+    }
+    
+    .grenadeDiv:last-child, .fieldDiv:last-child {
+        border-bottom: none;
+    }
+}
+  
+@media (max-width: 768px) {
+    #randomClassBody {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+    
+    #randomWeapons {
+      grid-column: 1 / 2;
+      grid-row: auto;
+    }
+    
+    #randomEquipment {
+      grid-column: 1 / 2;
+      grid-row: auto;
+    }
+    
+    #randomPerks {
+      grid-column: 1 / 2;
+      grid-row: auto;
+    }
+    
+    #wildcardDivision {
+      grid-column: 1 / 2;
+      grid-row: auto;
+    }
+    
+    #randomScorestreaks {
+      grid-column: 1 / 2;
+      grid-row: auto;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      height: auto;
+    }
+    
+    .modalContent {
+      margin-left: 10%;
+      width: 80%;
+    }
+
+    .equipmentClassifier, #wildcardClassifier, .perkClassifier {
+        display: none;
+    }
+
+    .perkDiv,
+    #randomFieldUpgrade,
+    #randomLethal, 
+    #randomTactical,
+    #randomWildcard {
+        width: 100%;
+    }
+    
+    .perkDivision {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .perkDivision .perkDiv {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    #lethalDivision, 
+    #tacticalDivision, 
+    #fieldUpgradeDivision,
+    #wildcardDivision {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    #randomLethal,
+    #randomTactical,
+    #randomFieldUpgrade {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    #randomWildcard {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .grenadeDiv, .fieldDiv {
+        width: 100%;
+        border-right: none;
+        border-bottom: solid #555 1px;
+    }
+    
+    .grenadeDiv:last-child, .fieldDiv:last-child {
+        border-bottom: none;
+    }
+
+    .equipment {
+        text-align: center;
+        padding-right: 0;
+        justify-self: center;
+    }
+}

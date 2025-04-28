@@ -1,0 +1,91 @@
+/* Equipment */
+#randomEquipment {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    row-gap: 15px;
+    color: white;
+    align-items: center;
+    max-width: 100%;
+    max-height: 100%;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+  
+#lethalDivision, #tacticalDivision, #fieldUpgradeDivision {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+#randomLethal, #randomFieldUpgrade, #randomTactical {
+    background-color: rgba(30, 30, 30, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+  
+#randomLethal, #randomFieldUpgrade {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-height: 100%;
+    border: solid #ff9d00 3px;
+}
+  
+#randomTactical {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    max-height: 100%;
+    border: solid #ff9d00 3px;
+}
+  
+.equipmentClassifier {
+    font-weight: bold;
+    margin-left: 15px;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #ff9d00;
+}
+  
+.grenadeDiv, .fieldDiv {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 5px;
+    width: 100%;
+    height: 100%;
+    border-right: solid #555 1px;
+    padding: 0;
+    transition: background-color 0.2s;
+}
+  
+.grenadeDiv:hover, .fieldDiv:hover {
+    background-color: rgba(60, 60, 60, 0.7);
+}
+
+.grenadeImage, .fieldImage {
+    height: 70px;
+    width: auto;
+    object-fit: fill;
+    max-width: 100%;
+    max-height: 97%;
+    border-radius: 5px;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    justify-self: start;
+}
+
+.equipment {
+    color: white;
+    font-size: 18px;
+    font-family: CODBO, 'Arial Black', sans-serif;
+    margin: 0;
+    padding-right: 10px;
+    width: 100%;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    justify-self: start;
+    text-align: left;
+}

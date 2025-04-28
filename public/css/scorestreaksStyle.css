@@ -1,0 +1,55 @@
+/* Scorestreaks */
+#randomScorestreaks {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    color: white;
+    align-items: center;
+    margin-top: 30px;
+    height: 140px;
+    width: 100%;
+    max-height: 100%;
+    border: solid #ff9d00 3px;
+    grid-column: 1 / 3;
+    grid-row: 4 / 5;
+    background-color: rgba(30, 30, 30, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+  
+.scorestreakDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    max-height: 100%;
+    width: 100%;
+    border-right: solid #555 1px;
+    transition: background-color 0.2s;
+}
+  
+.scorestreakDiv:hover {
+    background-color: rgba(60, 60, 60, 0.7);
+}
+  
+.scorestreakImage {
+    height: 90px;
+    width: auto;
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 5px;
+    filter: drop-shadow(2px 2px 4px black);
+}
+  
+.scorestreak {
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-family: CODBO, 'Arial Black', sans-serif;
+    margin: 5px 0 0 0;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}

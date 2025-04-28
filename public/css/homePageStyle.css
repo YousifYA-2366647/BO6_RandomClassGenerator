@@ -1,0 +1,226 @@
+@font-face {
+    font-family: CODBO;
+    src: url("../Resources/fonts/CallOfOpsDuty.ttf");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), 30%, rgba(0, 0, 0, 0.9)), url('../Resources/mainBackground.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    color: white;
+}
+
+/* Header Styles */
+#headers {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    border-bottom: 3px solid rgba(255, 165, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+#homeButtonHome {
+    position: absolute;
+    left: 20px;
+    height: 60px;
+    width: 110px;
+    transition: transform 0.3s ease;
+}
+
+#homeButtonHome:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+#titleHeader {
+    color: white;
+    font-size: 38px;
+    font-family: CODBO, 'Segoe UI', Tahoma, sans-serif;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(255, 165, 0, 0.7), 0 0 10px rgba(255, 165, 0, 0.4);
+}
+
+/* Description */
+#description {
+    color: white;
+    text-align: center;
+    font-family: CODBO, sans-serif;
+    font-size: 28px;
+    margin: 25px auto;
+    padding: 15px;
+    max-width: 800px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    border-left: 4px solid orange;
+}
+
+/* Settings Section */
+#settings {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 60px auto 30px auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 800px;
+    background-color: rgba(34, 34, 34, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 165, 0, 0.3);
+}
+
+#level, #DLC {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    width: 300px;
+}
+
+#curLevelLabel, #includeLabel {
+    color: white;
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-family: CODBO, sans-serif;
+    letter-spacing: 1px;
+}
+
+/* Slider Styling */
+#curLevel {
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 5px;
+    background: #444;
+    outline: none;
+}
+
+#curLevel::-webkit-slider-thumb {
+    appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: orange;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.2s;
+}
+
+#curLevel::-webkit-slider-thumb:hover {
+    background: #ffb732;
+    transform: scale(1.1);
+}
+
+/* Checkbox Styling */
+#includeDLC {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    accent-color: orange;
+}
+
+/* Button Styles */
+#buttonDiv {
+    text-align: center;
+    margin: 30px auto;
+}
+
+#generateButton {
+    background-color: rgba(255, 165, 0, 0.8);
+    color: black;
+    font-family: CODBO, sans-serif;
+    font-size: 24px;
+    border: none;
+    width: 250px;
+    height: 70px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#generateButton:hover {
+    background-color: orange;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+}
+
+#generateButton:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* Extras Section */
+#extras {
+    text-align: center;
+    margin: 20px auto;
+    margin-top: auto;
+}
+
+#disclaimerButton {
+    background-color: rgba(68, 68, 68, 0.7);
+    color: white;
+    border: none;
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+#disclaimerButton:hover {
+background-color: rgba(100, 100, 100, 0.7);
+}
+
+#disclaimerButton:active {
+background-color: rgba(50, 50, 50, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #titleHeader {
+    font-size: 26px;
+    }
+
+    #description {
+    font-size: 22px;
+    }
+
+    #settings {
+    flex-direction: column;
+    align-items: center;
+    }
+
+    #level, #DLC {
+    width: 100%;
+    }
+}

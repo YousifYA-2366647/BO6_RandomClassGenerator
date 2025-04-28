@@ -1,0 +1,71 @@
+/* Perks */
+#randomPerks {
+    display: grid;
+    row-gap: 15px;
+    color: white;
+    height: auto;
+    width: 100%;
+    min-width: 100%;
+    max-height: 100%;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+  
+.perkDiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 70px;
+    width: 100%;
+    border: solid #ff9d00 3px;
+    align-items: center;
+    background-color: rgba(30, 30, 30, 0.7);
+    border-radius: 8px;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+  
+.perkDiv:hover {
+    transform: translateX(5px);
+    background-color: rgba(60, 60, 60, 0.7);
+}
+  
+.perkDivision {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    margin-bottom: 10px;
+}
+  
+.perkClassifier {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-weight: bold;
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    max-width: 70px;
+    min-width: 50px;
+    margin-left: 15px;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #ff9d00;
+}
+  
+.perkImage {
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    max-width: 100%;
+    border-radius: 5px;
+    filter: drop-shadow(1px 1px 2px black);
+}
+  
+.perk {
+    color: white;
+    font-size: 20px;
+    font-family: CODBO, 'Arial Black', sans-serif;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}

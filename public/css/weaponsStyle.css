@@ -1,0 +1,183 @@
+/* Weapons section */
+#randomWeapons {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    column-gap: 10px;
+    row-gap: 15px;
+    text-align: center;
+    color: white;
+    min-width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+}
+  
+.weaponText {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+}
+  
+#primaryTitle, #secondaryTitle, #meleeTitle {
+    margin-top: 0;
+    margin-left: 0;
+    max-width: 70px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+  
+.circles {
+    color: #ff9d00;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+  
+.weaponName {
+    font-size: 34px;
+    font-family: CODBO, 'Arial Black', sans-serif;
+    margin: 0 auto 0 0;
+    width: 100%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+  
+#randomPrimary, #randomSecondary, #randomMelee {
+    text-align: center;
+    color: white;
+    width: auto;
+    height: 250px;
+    max-height: 400px;
+    background-color: rgba(30, 30, 30, 0.7);
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: solid #ff9d00 4px;
+}
+  
+#randomPrimary:hover, #secondaryAttachmentButton:hover #randomSecondary {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+  
+.weaponImage {
+    height: 210px;
+    max-width: 100%;
+    padding: 15px 0;
+    filter: drop-shadow(2px 4px 6px black);
+}
+  
+/* Attachments */
+.attachements {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 100%;
+}
+  
+.attachement {
+    text-align: center;
+    margin: 10px auto;
+    height: 84px;
+    width: 300px;
+    max-height: 100%;
+    border: solid #ff9d00 1px;
+    background-color: rgba(40, 40, 40, 0.8);
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+  
+.attachement:hover {
+    transform: scale(1.03);
+}
+  
+/* Modals */
+#primaryAttachmentButton, #secondaryAttachmentButton {
+    text-decoration: none;
+    display: block;
+}
+  
+#primaryAttachmentButton:hover #primaryAttachmentTooltip, 
+#secondaryAttachmentButton:hover #secondaryAttachmentTooltip {
+    cursor: pointer;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+  
+.attachmentTooltip {
+    display: inline-block;
+    position: absolute;
+    visibility: hidden;
+    padding: 8px 12px;
+    opacity: 0;
+    width: auto;
+    height: auto;
+    text-align: center;
+    background-color: #ff9d00;
+    color: #000;
+    border-radius: 5px;
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+  
+.attachmentModals {
+    display: none;
+    position: fixed;
+    cursor: auto;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: none;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(3px);
+}
+  
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), 80%, #000000), url('../Resources/mainBackground.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid #ff9d00;
+    border-radius: 10px;
+    margin-left: 25%;
+    margin-top: 5%;
+    width: 50%;
+    height: 80%;
+    overflow: auto;
+    z-index: 11;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+  
+.closeButton {
+    color: #fff;
+    float: right;
+    margin-right: 30%;
+    margin-top: 3%;
+    font-size: 16px;
+    width: 100px;
+    height: 5%;
+    border: 2px solid #ff9d00;
+    background-color: #333;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: all 0.2s;
+    text-transform: uppercase;
+}
+  
+.closeButton:hover, .closeButton:focus {
+    background-color: #ff9d00;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
