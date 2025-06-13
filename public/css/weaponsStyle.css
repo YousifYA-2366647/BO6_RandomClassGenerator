@@ -143,11 +143,10 @@
 .modalContent {
     display: flex;
     flex-direction: column;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), 80%, #000000), url('../Resources/mainBackground.png');
+    background-image: linear-gradient(to bottom, rgba(0.0, 0.0, 0.0, 0.8), 80%, rgba(0, 0, 0, 0.2)), url('../Resources/mainBackground.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-position: center;
     border: 2px solid #ff9d00;
     border-radius: 10px;
     margin-left: 25%;

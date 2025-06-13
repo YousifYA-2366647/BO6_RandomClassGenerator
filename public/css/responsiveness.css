@@ -1,6 +1,11 @@
 /* Additional responsive styles */
 @media (max-width: 1200px) {
+    body {
+      background-position: center;
+    }
+
     #randomClassBody {
+      background-position: center;
       width: 90%;
     }
 
@@ -60,12 +65,21 @@
     .grenadeDiv:last-child, .fieldDiv:last-child {
         border-bottom: none;
     }
+    
+    .modalContent {
+      background-position: center;
+    }
 }
   
 @media (max-width: 768px) {
+    body {
+      background-position: center;
+    }
+
     #randomClassBody {
       grid-template-columns: 1fr;
       grid-template-rows: auto;
+      background-position: center;
     }
     
     #randomWeapons {
@@ -97,6 +111,7 @@
     }
     
     .modalContent {
+      background-position: center;
       margin-left: 10%;
       width: 80%;
     }
