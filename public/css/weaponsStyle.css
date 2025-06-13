@@ -143,7 +143,11 @@
 .modalContent {
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     background-image: linear-gradient(to bottom, rgba(0.0, 0.0, 0.0, 0.8), 80%, rgba(0, 0, 0, 0.2)), url('../resources/mainBackground.png');
+=======
+    background-image: linear-gradient(to bottom, rgba(0.0, 0.0, 0.0, 0.8), 80%, rgba(0, 0, 0, 0.2)), url('../Resources/mainBackground.png');
+>>>>>>> 5c42356 (fixed some styling issues)
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
