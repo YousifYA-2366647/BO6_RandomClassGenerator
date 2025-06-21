@@ -1,6 +1,6 @@
 // returns the path to the requested image of a weapon or an attachment of that weapon.
 function getWeaponImagePath(weaponName, attachmentType, attachmentName) {
-    fullPath = "Resources/Weapons/" + weaponName; 
+    fullPath = "resources/Weapons/" + weaponName; 
     if (attachmentType != null) {
         fullPath += "/" + attachmentType 
     }
@@ -20,28 +20,28 @@ function getWeaponImagePath(weaponName, attachmentType, attachmentName) {
 
 // returns the path to the requested image of a perk.
 function getPerkImagePath(perkName) {
-    let fullPath = "Resources/Perks/";
+    let fullPath = "resources/Perks/";
     let noSymbolsPerkName = perkName.replace(/\W/g, '');
     return fullPath + noSymbolsPerkName + ".png";
 }
 
 // returns the path to the requested image of a scorestreak.
 function getScorestreakImagePath(scorestreakName) {
-    let fullPath = "Resources/Scorestreaks/";
+    let fullPath = "resources/Scorestreaks/";
     let noSymbolsScorestreakName = scorestreakName.replace(/\W/g, '');
     return fullPath + noSymbolsScorestreakName + ".png";
 }
 
 // returns the path to the requested image of a wildcard.
 function getWildcardImagePath(wildcardName) {
-    let fullPath = "Resources/Wildcards/";
+    let fullPath = "resources/Wildcards/";
     let noSymbolsWildcardName = wildcardName.replace(/\W/g, '');
     return fullPath + noSymbolsWildcardName + ".png";
 }
 
 // returns the path to the requested image of an equipment.
 function getEquipmentImagePath(equipmentName) {
-    let fullPath = "Resources/Equipment/";
+    let fullPath = "resources/Equipment/";
     let noSymbolsEquipmentName = equipmentName.replace(/\W/g, '');
     return fullPath + noSymbolsEquipmentName + ".png";
 }
