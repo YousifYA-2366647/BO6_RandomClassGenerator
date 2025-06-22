@@ -147,6 +147,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    background-position: center;
     border: 2px solid #ff9d00;
     border-radius: 10px;
     margin-left: 25%;
